@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gitbook serve ../stu_doc ../gh-pages",
-    "build": "gitbook build ../stu_doc ../gh-pages"
+    "build": "gitbook build ../stu_doc ../gh-pages",
+    "deploy": "node ./scripts/deploy_gh_pages.js",
+    "publish": "npm run build&&npm run deploy"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/wrcyyy/stu_doc/issues"
   },
-  "homepage": "https://github.com/wrcyyy/stu_doc#readme"
+  "homepage": "https://github.com/wrcyyy/stu_doc#readme",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
 }
