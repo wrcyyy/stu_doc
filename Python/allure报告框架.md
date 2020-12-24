@@ -26,13 +26,13 @@ allure报告中的部分数据可以通过报告中的json文件进行修改
     {
         "name": "域名",
         "values": [
-            "beta.inconnect.inhand.design"
+            "www.baidu.com"
         ]
     },
     {
         "name": "测试账户",
         "values": [
-            "wangrc@inhand.com.cn"
+            "wrcyyy@126.com"
         ]
     },
     {
