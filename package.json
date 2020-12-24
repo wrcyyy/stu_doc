@@ -1,0 +1,27 @@
+{
+  "name": "stu_doc",
+  "version": "1.0.0",
+  "description": "> 工作中技术积累",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gitbook serve ../stu_doc ../gh-pages",
+    "build": "gitbook build ../stu_doc ../gh-pages",
+    "deploy": "node ./scripts/deploy_gh_pages.js",
+    "publish": "npm run build&&npm run deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wrcyyy/stu_doc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wrcyyy/stu_doc/issues"
+  },
+  "homepage": "https://github.com/wrcyyy/stu_doc#readme",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
