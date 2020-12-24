@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>python相关 · GitBook</title>
+        <title>python代码优化指南 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="python迭代器--itertools.html" />
+    <link rel="next" href="pytest学习.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="python代码风格指南.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -168,7 +168,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="python代码机构梳理.html">
+        <li class="chapter active" data-level="1.2.5" data-path="python代码机构梳理.html">
             
                 <a href="python代码机构梳理.html">
             
@@ -339,7 +339,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >python相关</a>
+        <a href=".." >python代码优化指南</a>
     </h1>
 </div>
 
@@ -354,8 +354,98 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="python&#x76F8;&#x5173;">python&#x76F8;&#x5173;</h1>
-<p>&#x8BB0;&#x5F55;python&#x76F8;&#x5173;&#x7684;&#x4F7F;&#x7528;&#x6280;&#x5DE7;&#x53CA;&#x4E00;&#x4E9B;&#x597D;&#x7528;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</p>
+                                <p><a href="https://sourcery.ai/blog/explaining-refactorings-1/" target="_blank">&#x53C2;&#x8003;&#x94FE;&#x63A5;</a></p>
+<p>&#x4EE3;&#x7801;&#x7B80;&#x6D01;&#x6613;&#x61C2;&#x4E0D;&#x4EC5;&#x6613;&#x4E8E;&#x7EF4;&#x62A4;&#xFF0C;&#x66F4;&#x80FD;&#x907F;&#x514D;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x95EE;&#x9898;</p>
+<p>&#x4ECA;&#x5929;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#x91CD;&#x6784;python&#x9879;&#x76EE;&#x7684;&#x51E0;&#x4E2A;&#x601D;&#x8DEF;</p>
+<h1 id="&#x5408;&#x5E76;&#x5D4C;&#x5957;&#x7684;if&#x6761;&#x4EF6;">&#x5408;&#x5E76;&#x5D4C;&#x5957;&#x7684;if&#x6761;&#x4EF6;</h1>
+<p>&#x5408;&#x5E76;&#x524D;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> a:
+    <span class="hljs-keyword">if</span> b:
+        <span class="hljs-keyword">return</span> c
+</code></pre>
+<p>&#x5408;&#x5E76;&#x540E;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> a <span class="hljs-keyword">and</span> b:
+    <span class="hljs-keyword">return</span> c
+</code></pre>
+<h1 id="&#x5C06;&#x91CD;&#x590D;&#x7684;&#x4EE3;&#x7801;&#x79FB;&#x5230;&#x6761;&#x4EF6;&#x8BED;&#x53E5;&#x4E4B;&#x5916;">&#x5C06;&#x91CD;&#x590D;&#x7684;&#x4EE3;&#x7801;&#x79FB;&#x5230;&#x6761;&#x4EF6;&#x8BED;&#x53E5;&#x4E4B;&#x5916;</h1>
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">10</span>:
+    total = x * <span class="hljs-number">10</span>
+    res = f<span class="hljs-string">&apos;Total:{total}&apos;</span>
+<span class="hljs-keyword">else</span>:
+    total = x * <span class="hljs-number">100</span>
+    res = f<span class="hljs-string">&apos;Total:{total}&apos;</span>
+</code></pre>
+<p>&#x66F4;&#x6539;&#x540E;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">10</span>:
+    total = x * <span class="hljs-number">10</span>
+<span class="hljs-keyword">else</span>:
+    total = x * <span class="hljs-number">100</span>
+res=f<span class="hljs-string">&apos;Total:{total}&apos;</span>
+</code></pre>
+<h1 id="&#x5C06;&#x5185;&#x90E8;&#x5FAA;&#x73AF;&#x4E2D;&#x7684;yield&#x66FF;&#x6362;&#x4E3A;yield-from">&#x5C06;&#x5185;&#x90E8;&#x5FAA;&#x73AF;&#x4E2D;&#x7684;yield&#x66FF;&#x6362;&#x4E3A;yield from</h1>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_content</span><span class="hljs-params">(entry)</span>:</span>
+    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> entry:
+        <span class="hljs-keyword">yield</span> x
+<span class="hljs-comment"># &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;generator</span>
+</code></pre>
+<p>&#x66FF;&#x6362;&#x540E;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_content</span><span class="hljs-params">(entry)</span>:</span>
+    <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> entry
+<span class="hljs-comment"># &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;generator</span>
+</code></pre>
+<h1 id="&#x4F7F;&#x7528;any&#x800C;&#x4E0D;&#x662F;&#x5FAA;&#x73AF;">&#x4F7F;&#x7528;any&#x800C;&#x4E0D;&#x662F;&#x5FAA;&#x73AF;</h1>
+<pre><code class="lang-python">found = <span class="hljs-keyword">False</span>
+<span class="hljs-keyword">for</span> thing <span class="hljs-keyword">in</span> things:
+    <span class="hljs-keyword">if</span> thing == other_thing:
+        found = <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">break</span>
+</code></pre>
+<p>&#x66FF;&#x6362;&#x540E;&#xFF1A;</p>
+<pre><code class="lang-python">found = any(thing == other_thing <span class="hljs-keyword">for</span> thing <span class="hljs-keyword">in</span> things)
+</code></pre>
+<h1 id="&#x7528;&#x66FF;&#x6362;list">&#x7528;[]&#x66FF;&#x6362;list()</h1>
+<p>&#x521B;&#x5EFA;&#x5217;&#x8868;&#x65F6;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>[]</code>&#x800C;&#x4E0D;&#x662F;<code>list()</code></p>
+<p>&#x6D4B;&#x8BD5;&#x521B;&#x5EFA;&#x901F;&#x5EA6;&#xFF1A;</p>
+<pre><code class="lang-shell">python3 -m timeit &quot;x = list()&quot;
+python3 -m timeit &quot;x = []&quot;
+</code></pre>
+<p><em>&#x540C;&#x6837;&#x7684;&#x539F;&#x56E0;&#x548C;&#x6027;&#x80FD;&#x8868;&#x73B0;&#xFF0C;&#x4F7F;&#x7528;{}&#x66FF;&#x4EE3;dict()</em></p>
+<h1 id="&#x5C06;&#x91CD;&#x590D;&#x6267;&#x884C;&#x7684;&#x8BED;&#x53E5;&#x79FB;&#x51FA;forwhile&#x5FAA;&#x73AF;">&#x5C06;&#x91CD;&#x590D;&#x6267;&#x884C;&#x7684;&#x8BED;&#x53E5;&#x79FB;&#x51FA;for/while&#x5FAA;&#x73AF;</h1>
+<pre><code class="lang-python">res=[]
+<span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> numbers:
+    i =<span class="hljs-string">&apos;tester&apos;</span>
+    res.append(i * x)
+</code></pre>
+<p>&#x66F4;&#x6539;&#x540E;&#xFF1A;</p>
+<pre><code class="lang-python">res = []
+i = <span class="hljs-string">&apos;tester&apos;</span>
+<span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> numbers:
+    res.append(i * x)
+</code></pre>
+<h1 id="&#x5C06;for&#x5FAA;&#x73AF;&#x8F6C;&#x6362;&#x4E3A;listdictionaryset-&#x8868;&#x8FBE;&#x5F0F;">&#x5C06;for&#x5FAA;&#x73AF;&#x8F6C;&#x6362;&#x4E3A;list/dictionary/set &#x8868;&#x8FBE;&#x5F0F;</h1>
+<pre><code class="lang-python">cubes = []
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">20</span>):
+    cubes.append(i ** <span class="hljs-number">3</span>)
+</code></pre>
+<p>&#x66F4;&#x6539;&#x540E;&#xFF1A;</p>
+<pre><code class="lang-python">cubes = [i ** <span class="hljs-number">3</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">20</span>)]
+</code></pre>
+<h1 id="&#x7528;&#x589E;&#x91CF;&#x8D4B;&#x503C;&#x66FF;&#x6362;&#x8D4B;&#x503C;">&#x7528;&#x589E;&#x91CF;&#x8D4B;&#x503C;&#x66FF;&#x6362;&#x8D4B;&#x503C;</h1>
+<pre><code class="lang-python">count = count + other_value
+</code></pre>
+<p>&#x66F4;&#x6539;&#x540E;&#xFF1A;</p>
+<pre><code class="lang-python">count += other_value
+</code></pre>
+<h1 id="&#x7528;if&#x8868;&#x8FBE;&#x5F0F;&#x66FF;&#x6362;if&#x8BED;&#x53E5;">&#x7528;if&#x8868;&#x8FBE;&#x5F0F;&#x66FF;&#x6362;if&#x8BED;&#x53E5;</h1>
+<pre><code class="lang-python">
+<span class="hljs-keyword">if</span> condition:
+    x = <span class="hljs-number">1</span>
+<span class="hljs-keyword">else</span>:
+    x = <span class="hljs-number">2</span>
+</code></pre>
+<p>&#x66F4;&#x6539;&#x540E;&#xFF1A;</p>
+<pre><code class="lang-python">x = <span class="hljs-number">1</span> <span class="hljs-keyword">if</span> condition <span class="hljs-keyword">else</span> <span class="hljs-number">2</span>
+</code></pre>
 
                                 
                                 </section>
@@ -383,12 +473,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 介绍">
+                <a href="python代码风格指南.html" class="navigation navigation-prev " aria-label="Previous page: python代码风格指南">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="python迭代器--itertools.html" class="navigation navigation-next " aria-label="Next page: 迭代器--itertools">
+                <a href="pytest学习.html" class="navigation navigation-next " aria-label="Next page: pytest学习">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -399,7 +489,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"python相关","level":"1.2","depth":1,"next":{"title":"迭代器--itertools","level":"1.2.1","depth":2,"path":"Python/python迭代器--itertools.md","ref":"Python/python迭代器--itertools.md","articles":[]},"previous":{"title":"介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/README.md","mtime":"2020-12-24T08:58:18.486Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-24T09:31:13.556Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"python代码优化指南","level":"1.2.5","depth":2,"next":{"title":"pytest学习","level":"1.2.6","depth":2,"path":"Python/pytest学习.md","ref":"Python/pytest学习.md","articles":[]},"previous":{"title":"python代码风格指南","level":"1.2.4","depth":2,"path":"Python/python代码风格指南.md","ref":"Python/python代码风格指南.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/python代码机构梳理.md","mtime":"2020-12-24T09:29:41.424Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-24T09:31:13.556Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,0 +1,524 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>pytest学习 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="allure报告框架.html" />
+    
+    
+    <link rel="prev" href="python代码机构梳理.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    python相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="python迭代器--itertools.html">
+            
+                <a href="python迭代器--itertools.html">
+            
+                    
+                    迭代器--itertools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="apscheduler.html">
+            
+                <a href="apscheduler.html">
+            
+                    
+                    定时任务框架--apscheduler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Python装饰器.html">
+            
+                <a href="Python装饰器.html">
+            
+                    
+                    装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="python代码风格指南.html">
+            
+                <a href="python代码风格指南.html">
+            
+                    
+                    python代码风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="python代码机构梳理.html">
+            
+                <a href="python代码机构梳理.html">
+            
+                    
+                    python代码优化指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.6" data-path="pytest学习.html">
+            
+                <a href="pytest学习.html">
+            
+                    
+                    pytest学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="allure报告框架.html">
+            
+                <a href="allure报告框架.html">
+            
+                    
+                    allure-自动化测试报告框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Linux/">
+            
+                <a href="../Linux/">
+            
+                    
+                    Linux相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Linux/VIM操作及快捷键.html">
+            
+                <a href="../Linux/VIM操作及快捷键.html">
+            
+                    
+                    vim操作就快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Linux/通过VNC访问Ubuntu远程桌面.html">
+            
+                <a href="../Linux/通过VNC访问Ubuntu远程桌面.html">
+            
+                    
+                    通过VNC访问Ubuntu远程桌面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Linux/GIT命令.html">
+            
+                <a href="../Linux/GIT命令.html">
+            
+                    
+                    Git命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Linux/mininet.html">
+            
+                <a href="../Linux/mininet.html">
+            
+                    
+                    Mininet学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Linux/Linux常用命令.html">
+            
+                <a href="../Linux/Linux常用命令.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Linux/frp内网穿透.html">
+            
+                <a href="../Linux/frp内网穿透.html">
+            
+                    
+                    FRP内网穿透
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >pytest学习</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h1>
+<p><a href="https://docs.pytest.org/en/latest/contents.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+<p><a href="https://learning-pytest.readthedocs.io/zh/latest/" target="_blank">&#x7CBE;&#x7B80;&#x6587;&#x6863;</a></p>
+<h1 id="fixture">Fixture</h1>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;fixture">&#x4EC0;&#x4E48;&#x662F;Fixture</h2>
+<p>Fixture&#x662F;&#x4E00;&#x4E9B;&#x51FD;&#x6570;&#xFF0C;pytest &#x4F1A;&#x5728;&#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x51FD;&#x6570;&#x4E4B;&#x524D;&#xFF08;&#x6216;&#x4E4B;&#x540E;&#xFF09;&#x52A0;&#x8F7D;&#x8FD0;&#x884C;&#x5B83;&#x4EEC;</p>
+<p>&#x6700;&#x5E38;&#x7528;&#x7684;&#x7528;&#x6CD5;&#x662F;&#x5728;fixture&#x4E2D;&#x5B9A;&#x4E49;&#x6211;&#x4EEC;&#x5728;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x6267;&#x884C;&#x524D;&#x548C;&#x6267;&#x884C;&#x540E;&#x8981;&#x505A;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x5728;&#x6267;&#x884C;&#x7528;&#x4F8B;&#x524D;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x90AE;&#x7F16;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># test_postcode.py</span>
+<span class="hljs-meta">@pytest.fixture()</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">postcode</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;010&apos;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_postcode</span><span class="hljs-params">(postcode)</span>:</span>
+    <span class="hljs-keyword">assert</span> postcode == <span class="hljs-string">&apos;010&apos;</span>
+</code></pre>
+<p>&#x66F4;&#x591A;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x4E00;&#x4E2A;&#x56FA;&#x4EF6;&#x53EF;&#x4EE5;&#x5728;&#x66F4;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x590D;&#x7528;&#xFF0C;&#x8FD9;&#x5C31;&#x9700;&#x8981;&#x5BF9;&#x56FA;&#x4EF6;&#x8FDB;&#x884C;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;&#x3002;Pytest &#x4F7F;&#x7528;&#x6587;&#x4EF6;<code>conftest.py</code>&#x96C6;&#x4E2D;&#x7BA1;&#x7406;&#x56FA;&#x4EF6;&#x3002;</p>
+<p><em>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF1A;&#x5728;&#x590D;&#x6742;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x5F55;&#x5C42;&#x7EA7;&#x5B9A;&#x4E49;<code>conftest.py</code>&#xFF0C;&#x5176;&#x4F5C;&#x7528;&#x57DF;&#x4E3A;&#x5176;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x548C;&#x5B50;&#x76EE;&#x5F55;&#x3002;</em></p>
+<h2 id="&#x9884;&#x5904;&#x7406;&#x548C;&#x540E;&#x5904;&#x7406;">&#x9884;&#x5904;&#x7406;&#x548C;&#x540E;&#x5904;&#x7406;</h2>
+<p>&#x5F88;&#x591A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x6267;&#x884C;&#x524D;&#x51C6;&#x5907;&#x6570;&#x636E;&#x6216;&#x8005;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#xFF0C;&#x6D4B;&#x8BD5;&#x7ED3;&#x675F;&#x540E;&#x6E05;&#x9664;&#x6570;&#x636E;&#x6216;&#x8005;&#x8FDE;&#x63A5;&#x3002;</p>
+<p>&#x5F53;&#x6709;&#x5927;&#x91CF;&#x91CD;&#x590D;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x6700;&#x597D;&#x7684;&#x529E;&#x6CD5;&#x5C31;&#x662F;&#x7528;Fixture&#x6765;&#x6267;&#x884C;&#x9884;&#x5904;&#x7406;&#x548C;&#x540E;&#x5904;&#x7406;&#x64CD;&#x4F5C;</p>
+<p>pytest&#x4F7F;&#x7528;<code>yield</code>&#x5173;&#x952E;&#x8BCD;&#x5C06;Fixture&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF0C;<code>yield</code>&#x4E4B;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x4F1A;&#x5728;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x6267;&#x884C;&#x524D;&#x6267;&#x884C;&#xFF1B;<code>yield</code>&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x5219;&#x5728;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x6267;&#x884C;&#x540E;&#x6267;&#x884C;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># test_db.py</span>
+<span class="hljs-meta">@pytest.fixture()</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">db</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&apos;Connection successful&apos;</span>)
+    <span class="hljs-keyword">yield</span>
+    print(<span class="hljs-string">&apos;Connection closed&apos;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_search</span><span class="hljs-params">(db)</span>:</span>
+    <span class="hljs-keyword">assert</span> <span class="hljs-number">1</span> == <span class="hljs-number">1</span>
+</code></pre>
+<h2 id="fixture&#x4F5C;&#x7528;&#x57DF;">Fixture&#x4F5C;&#x7528;&#x57DF;</h2>
+<p>Fixture&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4E3A;&#x4E86;&#x62BD;&#x79BB;&#x51FA;&#x91CD;&#x590D;&#x7684;&#x5DE5;&#x4F5C;&#x548C;&#x65B9;&#x4FBF;&#x590D;&#x7528;&#xFF0C;&#x4E3A;&#x4E86;&#x66F4;&#x7CBE;&#x7EC6;&#x5316;&#x63A7;&#x5236;&#x56FA;&#x4EF6;&#xFF08;&#x6BD4;&#x5982;&#x53EA;&#x60F3;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x8BBF;&#x95EE;&#x6D4B;&#x8BD5;&#x811A;&#x672C;&#x4F7F;&#x7528;&#x81EA;&#x52A8;&#x8FDE;&#x63A5;&#x5173;&#x95ED;&#x7684;&#x56FA;&#x4EF6;&#xFF09;&#xFF0C;pytest &#x4F7F;&#x7528;&#x4F5C;&#x7528;&#x57DF;&#x6765;&#x8FDB;&#x884C;&#x6307;&#x5B9A;&#x56FA;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x8303;&#x56F4;&#x3002;</p>
+<p>&#x5728;&#x5B9A;&#x4E49;Fixture&#x65F6;&#xFF0C;&#x901A;&#x8FC7;<code>scope</code>&#x53C2;&#x6570;&#x58F0;&#x660E;&#x4F5C;&#x7528;&#x57DF;&#xFF1A;</p>
+<pre><code>function    &#x51FD;&#x6570;&#x7EA7;&#xFF0C;&#x6BCF;&#x6761;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x90FD;&#x4F1A;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x8BE5;Fixture&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;function&#xFF09;
+class   &#x7C7B;&#x7EA7;&#x522B;&#xFF0C;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x7C7B;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x6D4B;&#x8BD5;&#x7C7B;&#x5185;&#x7684;&#x7528;&#x4F8B;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;
+module  &#x6A21;&#x5757;&#x7EA7;&#xFF0C;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x6A21;&#x5757;&#x5185;&#x7684;&#x51FD;&#x6570;&#x548C;&#x65B9;&#x6CD5;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;
+session &#x4F1A;&#x8BDD;&#x7EA7;&#xFF0C;&#x4E00;&#x6B21;&#x6D4B;&#x8BD5;&#x53EA;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x6240;&#x6709;&#x51FD;&#x6570;&#x548C;&#x65B9;&#x6CD5;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;
+</code></pre><h2 id="&#x91CD;&#x547D;&#x540D;">&#x91CD;&#x547D;&#x540D;</h2>
+<p>&#x56FA;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x9ED8;&#x8BA4;&#x4E3A;&#x5B9A;&#x4E49;&#x65F6;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>name</code>&#x9009;&#x9879;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># test_rename.py</span>
+<span class="hljs-meta">@pytest.fixture(name=&apos;age&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calculate_average_age</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">28</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_age</span><span class="hljs-params">(age)</span>:</span>
+    <span class="hljs-keyword">assert</span> age == <span class="hljs-number">28</span>
+</code></pre>
+<h2 id="&#x53C2;&#x6570;&#x5316;">&#x53C2;&#x6570;&#x5316;</h2>
+<p>&#x5047;&#x8BBE;&#x73B0;&#x5728;&#x6709;&#x4E00;&#x6279; API &#x9700;&#x8981;&#x6D4B;&#x8BD5;&#x5BF9;&#x4E0D;&#x540C;&#x6570;&#x636E;&#x5E93;&#x7684;&#x652F;&#x6301;&#x60C5;&#x51B5;&#xFF08;&#x5BF9;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x76F8;&#x540C;&#x64CD;&#x4F5C;&#xFF09;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x9488;&#x5BF9;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#xFF0C;&#x4F46;&#x8FD9;&#x5305;&#x542B;&#x5927;&#x91CF;&#x91CD;&#x590D;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8FDE;&#x63A5;&#x3001;&#x5173;&#x95ED;&#xFF0C;&#x67E5;&#x8BE2;&#x7B49;&#x3002;</p>
+<h1 id="pytestini&#x6587;&#x4EF6;&#x914D;&#x7F6E;">pytest.ini&#x6587;&#x4EF6;&#x914D;&#x7F6E;</h1>
+<ul>
+<li><p><code>console_output_style</code>&#x53C2;&#x6570;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;&#x683C;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<code>progress</code>,&#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF1A;</p>
+<ul>
+<li><code>classic</code>pytest&#x7ECF;&#x5178;&#x8F93;&#x51FA;</li>
+<li><code>progress</code>&#x5728;&#x7ECF;&#x5178;&#x8F93;&#x51FA;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x589E;&#x52A0;&#x4E86;&#x8FDB;&#x5EA6;&#x663E;&#x793A;</li>
+<li><code>count</code>&#x663E;&#x793A;&#x5DF2;&#x5B8C;&#x6210;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x767E;&#x5206;&#x6BD4;</li>
+</ul>
+</li>
+<li><code>testpaths</code>&#x6307;&#x5B9A;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x6839;&#x76EE;&#x5F55;&#xFF0C;&#x544A;&#x8BC9;<code>pytest</code>&#x4EC5;&#x8FD0;&#x884C;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x7528;&#x4F8B;&#x3002;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x76EE;&#x5F55;&#x9700;&#x8981;&#x7528;&#x7A7A;&#x683C;&#x5206;&#x9694;</li>
+</ul>
+<h2 id="&#x65E5;&#x5FD7;&#x8BBE;&#x7F6E;">&#x65E5;&#x5FD7;&#x8BBE;&#x7F6E;</h2>
+<ul>
+<li><code>log_format</code>&#x6307;&#x5B9A;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;&#xFF0C;&#x53C2;&#x8003;&#x503C;&#xFF1A;<code>%(asctime)s %(levelname)s %(message)s</code></li>
+<li><code>log_date_format</code>&#x6307;&#x5B9A;&#x65E5;&#x5FD7;&#x4E2D;&#x65F6;&#x95F4;&#x7684;&#x663E;&#x793A;&#x683C;&#x5F0F;&#xFF0C;&#x53C2;&#x8003;&#x503C;&#xFF1A;<code>%Y-%m-%d %H:%M:%S</code></li>
+<li><code>log_level</code>&#x6307;&#x5B9A;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#xFF0C;&#x53C2;&#x8003;&#x503C;<code>INFO</code></li>
+</ul>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code># content of pytest.ini
+[pytest]
+testpaths = TestCase
+addopts = -s
+          -q
+          -n=1
+          --reruns=2
+          --reruns-delay=5
+          --alluredir=Report/allure-results
+          --clean-alluredir
+log_format = %(asctime)s %(levelname)s %(message)s
+log_level = INFO
+log_cli = True
+log_date_format = %Y-%m-%d %H:%M:%S
+</code></pre><h1 id="&#x63D2;&#x4EF6;">&#x63D2;&#x4EF6;</h1>
+<h1 id="pytest&#x591A;&#x7EBF;&#x7A0B;&#x63D2;&#x4EF6;pytest-xdist">pytest&#x591A;&#x7EBF;&#x7A0B;&#x63D2;&#x4EF6;<code>pytest-xdist</code></h1>
+<p>&#x8BE5;&#x63D2;&#x4EF6;&#x80FD;&#x591F;&#x591A;&#x7EBF;&#x7A0B;&#x8FD0;&#x884C;&#x7528;&#x4F8B;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;<code>pytest.ini</code>&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x5165;<code>-n=auto</code>&#x53C2;&#x6570;&#x5373;&#x53EF;&#x3002;</p>
+<p><a href="https://pypi.org/project/pytest-xdist/" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="python代码机构梳理.html" class="navigation navigation-prev " aria-label="Previous page: python代码优化指南">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="allure报告框架.html" class="navigation navigation-next " aria-label="Next page: allure-自动化测试报告框架">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"pytest学习","level":"1.2.6","depth":2,"next":{"title":"allure-自动化测试报告框架","level":"1.2.7","depth":2,"path":"Python/allure报告框架.md","ref":"Python/allure报告框架.md","articles":[]},"previous":{"title":"python代码优化指南","level":"1.2.5","depth":2,"path":"Python/python代码机构梳理.md","ref":"Python/python代码机构梳理.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/pytest学习.md","mtime":"2020-12-24T09:28:55.838Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-24T09:31:13.556Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
