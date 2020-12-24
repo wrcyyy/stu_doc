@@ -1,0 +1,373 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Git命令 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="通过VNC访问Ubuntu远程桌面.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Python/">
+            
+                <a href="../Python/">
+            
+                    
+                    python相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Python/python迭代器--itertools.html">
+            
+                <a href="../Python/python迭代器--itertools.html">
+            
+                    
+                    迭代器--itertools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Python/apscheduler.html">
+            
+                <a href="../Python/apscheduler.html">
+            
+                    
+                    定时任务框架--apscheduler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Python/Python装饰器.html">
+            
+                <a href="../Python/Python装饰器.html">
+            
+                    
+                    装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Python/python代码风格指南.html">
+            
+                <a href="../Python/python代码风格指南.html">
+            
+                    
+                    python代码风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linux相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="VIM操作及快捷键.html">
+            
+                <a href="VIM操作及快捷键.html">
+            
+                    
+                    vim操作就快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="通过VNC访问Ubuntu远程桌面.html">
+            
+                <a href="通过VNC访问Ubuntu远程桌面.html">
+            
+                    
+                    通过VNC访问Ubuntu远程桌面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="GIT命令.html">
+            
+                <a href="GIT命令.html">
+            
+                    
+                    Git命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Git命令</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="git&#x64A4;&#x9500;&#x4E0A;&#x4E00;&#x6B21;&#x7684;commit&#x64CD;&#x4F5C;">git&#x64A4;&#x9500;&#x4E0A;&#x4E00;&#x6B21;&#x7684;commit&#x64CD;&#x4F5C;</h1>
+<h2 id="&#x4EC5;&#x5728;&#x672C;&#x5730;commit&#x8FD8;&#x672A;push">&#x4EC5;&#x5728;&#x672C;&#x5730;commit&#x8FD8;&#x672A;push</h2>
+<pre><code class="lang-shell">git reset --soft|--mixed|--hard &lt;commit_id&gt;
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x7684;<commit_id>&#x5C31;&#x662F;&#x6BCF;&#x4E00;&#x6B21;commit&#x7684;SHA-1&#xFF0C;&#x53EF;&#x4EE5;&#x5728;log&#x4E2D;&#x67E5;&#x770B;</commit_id></p>
+<ul>
+<li>--mixed &#x4F1A;&#x4FDD;&#x7559;&#x6E90;&#x7801;&#xFF0C;&#x53EA;&#x662F;&#x5C06;git commit&#x548C;index &#x4FE1;&#x606F;&#x56DE;&#x9000;&#x5230;&#x4E86;&#x67D0;&#x4E2A;&#x7248;&#x672C;</li>
+<li>--soft &#x4FDD;&#x7559;&#x6E90;&#x7801;,&#x53EA;&#x56DE;&#x9000;&#x5230;commit&#x4FE1;&#x606F;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;.&#x4E0D;&#x6D89;&#x53CA;index&#x7684;&#x56DE;&#x9000;,&#x5982;&#x679C;&#x8FD8;&#x9700;&#x8981;&#x63D0;&#x4EA4;,&#x76F4;&#x63A5;commit&#x5373;&#x53EF;</li>
+<li>--hard    &#x6E90;&#x7801;&#x4E5F;&#x4F1A;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;,commit&#x548C;index &#x90FD;&#x4F1A;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;.(&#x6CE8;&#x610F;,&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x6539;&#x53D8;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x4ED3;&#x5E93;&#x6E90;&#x7801;)</li>
+</ul>
+<h2 id="&#x4EE3;&#x7801;&#x5DF2;&#x7ECF;commit&#x5E76;push&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;">&#x4EE3;&#x7801;&#x5DF2;&#x7ECF;commit&#x5E76;push&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</h2>
+<p>&#x5BF9;&#x4E8E;&#x5DF2;&#x7ECF;&#x628A;&#x4EE3;&#x7801;push&#x5230;&#x7EBF;&#x4E0A;&#x4ED3;&#x5E93;,&#x4F60;&#x56DE;&#x9000;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x5176;&#x5B9E;&#x4E5F;&#x60F3;&#x540C;&#x65F6;&#x56DE;&#x9000;&#x7EBF;&#x4E0A;&#x4EE3;&#x7801;,&#x56DE;&#x6EDA;&#x5230;&#x67D0;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x7248;&#x672C;,&#x7EBF;&#x4E0A;,&#x7EBF;&#x4E0B;&#x4EE3;&#x7801;&#x4FDD;&#x6301;&#x4E00;&#x81F4;.&#x4F60;&#x8981;&#x7528;&#x5230;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;</p>
+<pre><code class="lang-shell">git revert &lt;commit_id&gt;
+</code></pre>
+<p>revert &#x4E4B;&#x540E;&#x4F60;&#x7684;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x4F1A;&#x56DE;&#x6EDA;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x5386;&#x53F2;&#x7248;&#x672C;,&#x8FD9;&#x65F6;&#x4F60;&#x518D; git push &#x65E2;&#x53EF;&#x4EE5;&#x628A;&#x7EBF;&#x4E0A;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x65B0;&#x3002;</p>
+<hr>
+<p>&#x6CE8;&#x610F;&#xFF1A;git revert&#x662F;&#x7528;&#x4E00;&#x6B21;&#x65B0;&#x7684;commit&#x6765;&#x56DE;&#x6EDA;&#x4E4B;&#x524D;&#x7684;commit&#xFF0C;git reset&#x662F;&#x76F4;&#x63A5;&#x5220;&#x9664;&#x6307;&#x5B9A;&#x7684;commit&#xFF0C;&#x770B;&#x4F3C;&#x8FBE;&#x5230;&#x7684;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;,&#x5176;&#x5B9E;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="通过VNC访问Ubuntu远程桌面.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 通过VNC访问Ubuntu远程桌面">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Git命令","level":"1.3.3","depth":2,"previous":{"title":"通过VNC访问Ubuntu远程桌面","level":"1.3.2","depth":2,"path":"Linux/通过VNC访问Ubuntu远程桌面.md","ref":"Linux/通过VNC访问Ubuntu远程桌面.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/GIT命令.md","mtime":"2020-12-24T06:58:41.167Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-24T07:39:00.003Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

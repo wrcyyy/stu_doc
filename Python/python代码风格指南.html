@@ -1,0 +1,438 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>python代码风格指南 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Linux/" />
+    
+    
+    <link rel="prev" href="Python装饰器.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    python相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="python迭代器--itertools.html">
+            
+                <a href="python迭代器--itertools.html">
+            
+                    
+                    迭代器--itertools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="apscheduler.html">
+            
+                <a href="apscheduler.html">
+            
+                    
+                    定时任务框架--apscheduler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Python装饰器.html">
+            
+                <a href="Python装饰器.html">
+            
+                    
+                    装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="python代码风格指南.html">
+            
+                <a href="python代码风格指南.html">
+            
+                    
+                    python代码风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Linux/">
+            
+                <a href="../Linux/">
+            
+                    
+                    Linux相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Linux/VIM操作及快捷键.html">
+            
+                <a href="../Linux/VIM操作及快捷键.html">
+            
+                    
+                    vim操作就快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Linux/通过VNC访问Ubuntu远程桌面.html">
+            
+                <a href="../Linux/通过VNC访问Ubuntu远程桌面.html">
+            
+                    
+                    通过VNC访问Ubuntu远程桌面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Linux/GIT命令.html">
+            
+                <a href="../Linux/GIT命令.html">
+            
+                    
+                    Git命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >python代码风格指南</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>[Toc]</p>
+<h1 id="python&#x8BED;&#x8A00;&#x89C4;&#x8303;">python&#x8BED;&#x8A00;&#x89C4;&#x8303;</h1>
+<p><a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/contents/" target="_blank">&#x53C2;&#x8003;&#x6587;&#x6863;</a></p>
+<h2 id="lint">Lint</h2>
+<h2 id="&#x5BFC;&#x5165;">&#x5BFC;&#x5165;</h2>
+<h2 id="&#x5305;">&#x5305;</h2>
+<h2 id="&#x5F02;&#x5E38;">&#x5F02;&#x5E38;</h2>
+<h2 id="&#x5168;&#x5C40;&#x53D8;&#x91CF;">&#x5168;&#x5C40;&#x53D8;&#x91CF;</h2>
+<h2 id="&#x5D4C;&#x5957;&#x5C40;&#x90E8;&#x5185;&#x90E8;&#x7C7B;&#x6216;&#x51FD;&#x6570;">&#x5D4C;&#x5957;/&#x5C40;&#x90E8;/&#x5185;&#x90E8;&#x7C7B;&#x6216;&#x51FD;&#x6570;</h2>
+<h2 id="&#x5217;&#x8868;&#x63A8;&#x5BFC;">&#x5217;&#x8868;&#x63A8;&#x5BFC;</h2>
+<h2 id="&#x9ED8;&#x8BA4;&#x8FED;&#x4EE3;&#x5668;&#x548C;&#x64CD;&#x4F5C;&#x7B26;">&#x9ED8;&#x8BA4;&#x8FED;&#x4EE3;&#x5668;&#x548C;&#x64CD;&#x4F5C;&#x7B26;</h2>
+<h2 id="&#x751F;&#x6210;&#x5668;">&#x751F;&#x6210;&#x5668;</h2>
+<h2 id="lambda&#x51FD;&#x6570;">lambda&#x51FD;&#x6570;</h2>
+<h2 id="&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;">&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;</h2>
+<h2 id="&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x503C;">&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x503C;</h2>
+<h2 id="&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</h2>
+<h2 id="truefalse&#x7684;&#x6C42;&#x503C;">True/False&#x7684;&#x6C42;&#x503C;</h2>
+<h2 id="&#x8FC7;&#x65F6;&#x7684;&#x8BED;&#x8A00;&#x7279;&#x6027;">&#x8FC7;&#x65F6;&#x7684;&#x8BED;&#x8A00;&#x7279;&#x6027;</h2>
+<h2 id="&#x8BCD;&#x6CD5;&#x4F5C;&#x7528;&#x57DF;">&#x8BCD;&#x6CD5;&#x4F5C;&#x7528;&#x57DF;</h2>
+<h2 id="&#x51FD;&#x6570;&#x4E0E;&#x65B9;&#x6CD5;&#x88C5;&#x9970;&#x5668;">&#x51FD;&#x6570;&#x4E0E;&#x65B9;&#x6CD5;&#x88C5;&#x9970;&#x5668;</h2>
+<h2 id="&#x7EBF;&#x7A0B;">&#x7EBF;&#x7A0B;</h2>
+<h2 id="&#x5A01;&#x529B;&#x8FC7;&#x5927;&#x7684;&#x7279;&#x6027;">&#x5A01;&#x529B;&#x8FC7;&#x5927;&#x7684;&#x7279;&#x6027;</h2>
+<h1 id="python&#x98CE;&#x683C;&#x89C4;&#x8303;">python&#x98CE;&#x683C;&#x89C4;&#x8303;</h1>
+<h2 id="&#x5206;&#x53F7;">&#x5206;&#x53F7;</h2>
+<h2 id="&#x884C;&#x957F;&#x5EA6;">&#x884C;&#x957F;&#x5EA6;</h2>
+<h2 id="&#x62EC;&#x53F7;">&#x62EC;&#x53F7;</h2>
+<h2 id="&#x7F29;&#x8FDB;">&#x7F29;&#x8FDB;</h2>
+<h2 id="&#x7A7A;&#x884C;">&#x7A7A;&#x884C;</h2>
+<h2 id="&#x7A7A;&#x683C;">&#x7A7A;&#x683C;</h2>
+<h2 id="shebang">Shebang</h2>
+<h2 id="&#x6CE8;&#x91CA;">&#x6CE8;&#x91CA;</h2>
+<h2 id="&#x7C7B;">&#x7C7B;</h2>
+<h2 id="&#x5B57;&#x7B26;&#x4E32;">&#x5B57;&#x7B26;&#x4E32;</h2>
+<h2 id="&#x6587;&#x4EF6;&#x548C;sockets">&#x6587;&#x4EF6;&#x548C;sockets</h2>
+<h2 id="todo&#x6CE8;&#x91CA;">TODO&#x6CE8;&#x91CA;</h2>
+<h2 id="&#x5BFC;&#x5165;&#x683C;&#x5F0F;">&#x5BFC;&#x5165;&#x683C;&#x5F0F;</h2>
+<h2 id="&#x8BED;&#x53E5;">&#x8BED;&#x53E5;</h2>
+<h2 id="&#x8BBF;&#x95EE;&#x63A7;&#x5236;">&#x8BBF;&#x95EE;&#x63A7;&#x5236;</h2>
+<h2 id="&#x547D;&#x540D;">&#x547D;&#x540D;</h2>
+<pre><code class="lang-text">module_name
+package_name
+ClassName
+method_name
+ExceptionName
+function_name
+GLOBAL_VAR_NAME
+instance_var_name
+function_parameter_name
+local_var_name
+</code></pre>
+<h3 id="&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x7684;&#x540D;&#x79F0;">&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x7684;&#x540D;&#x79F0;</h3>
+<ol>
+<li>&#x5355;&#x5B57;&#x7B26;&#x540D;&#x79F0;, &#x9664;&#x4E86;&#x8BA1;&#x6570;&#x5668;&#x548C;&#x8FED;&#x4EE3;&#x5668;.</li>
+<li>&#x5305;/&#x6A21;&#x5757;&#x540D;&#x4E2D;&#x7684;&#x8FDE;&#x5B57;&#x7B26;(-)</li>
+<li>&#x53CC;&#x4E0B;&#x5212;&#x7EBF;&#x5F00;&#x5934;&#x5E76;&#x7ED3;&#x5C3E;&#x7684;&#x540D;&#x79F0;(Python&#x4FDD;&#x7559;, &#x4F8B;&#x5982;<strong>init</strong>)</li>
+</ol>
+<h3 id="&#x547D;&#x540D;&#x7EA6;&#x5B9A;">&#x547D;&#x540D;&#x7EA6;&#x5B9A;</h3>
+<ol>
+<li>&#x6240;&#x8C13;&#x201D;&#x5185;&#x90E8;(Internal)&#x201D;&#x8868;&#x793A;&#x4EC5;&#x6A21;&#x5757;&#x5185;&#x53EF;&#x7528;, &#x6216;&#x8005;, &#x5728;&#x7C7B;&#x5185;&#x662F;&#x4FDD;&#x62A4;&#x6216;&#x79C1;&#x6709;&#x7684;.</li>
+<li>&#x7528;&#x5355;&#x4E0B;&#x5212;&#x7EBF;(_)&#x5F00;&#x5934;&#x8868;&#x793A;&#x6A21;&#x5757;&#x53D8;&#x91CF;&#x6216;&#x51FD;&#x6570;&#x662F;protected&#x7684;(&#x4F7F;&#x7528;from module import *&#x65F6;&#x4E0D;&#x4F1A;&#x5305;&#x542B;).</li>
+<li>&#x7528;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;(__)&#x5F00;&#x5934;&#x7684;&#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#x6216;&#x65B9;&#x6CD5;&#x8868;&#x793A;&#x7C7B;&#x5185;&#x79C1;&#x6709;.</li>
+<li>&#x5C06;&#x76F8;&#x5173;&#x7684;&#x7C7B;&#x548C;&#x9876;&#x7EA7;&#x51FD;&#x6570;&#x653E;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x91CC;. &#x4E0D;&#x50CF;Java, &#x6CA1;&#x5FC5;&#x8981;&#x9650;&#x5236;&#x4E00;&#x4E2A;&#x7C7B;&#x4E00;&#x4E2A;&#x6A21;&#x5757;.</li>
+<li>&#x5BF9;&#x7C7B;&#x540D;&#x4F7F;&#x7528;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x5F00;&#x5934;&#x7684;&#x5355;&#x8BCD;(&#x5982;CapWords, &#x5373;Pascal&#x98CE;&#x683C;), &#x4F46;&#x662F;&#x6A21;&#x5757;&#x540D;&#x5E94;&#x8BE5;&#x7528;&#x5C0F;&#x5199;&#x52A0;&#x4E0B;&#x5212;&#x7EBF;&#x7684;&#x65B9;&#x5F0F;(&#x5982;lower_with_under.py). &#x5C3D;&#x7BA1;&#x5DF2;&#x7ECF;&#x6709;&#x5F88;&#x591A;&#x73B0;&#x5B58;&#x7684;&#x6A21;&#x5757;&#x4F7F;&#x7528;&#x7C7B;&#x4F3C;&#x4E8E;CapWords.py&#x8FD9;&#x6837;&#x7684;&#x547D;&#x540D;, &#x4F46;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x4E0D;&#x9F13;&#x52B1;&#x8FD9;&#x6837;&#x505A;, &#x56E0;&#x4E3A;&#x5982;&#x679C;&#x6A21;&#x5757;&#x540D;&#x78B0;&#x5DE7;&#x548C;&#x7C7B;&#x540D;&#x4E00;&#x81F4;, &#x8FD9;&#x4F1A;&#x8BA9;&#x4EBA;&#x56F0;&#x6270;.</li>
+</ol>
+<p>python&#x4E4B;&#x7236;Guido&#x63A8;&#x8350;&#x7684;&#x89C4;&#x8303;
+&#x7C7B;&#x578B;|&#x516C;&#x5171;|&#x5185;&#x90E8;
+----|---|---
+Modules | lower_with_under | _lower_with_under
+Packages | lower_with_under |<br>Classes | CapWords | _CapWords
+Exceptions | CapWords |<br>Functions | lower_with_under() | _lower_with_under()
+Global/Class Constants | CAPS_WITH_UNDER | _CAPS_WITH_UNDER
+Global/Class Variables | lower_with_under | _lower_with_under
+Instance Variables | lower_with_under | _lower_with_under (protected) or <strong>lower_with_under (private)
+Method Names | lower_with_under() | _lower_with_under() (protected) or </strong>lower_with_under() (private)
+Function/Method Parameters | lower_with_under |<br>Local Variables | lower_with_under |  </p>
+<h2 id="main">Main</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Python装饰器.html" class="navigation navigation-prev " aria-label="Previous page: 装饰器">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Linux/" class="navigation navigation-next " aria-label="Next page: Linux相关">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"python代码风格指南","level":"1.2.4","depth":2,"next":{"title":"Linux相关","level":"1.3","depth":1,"path":"Linux/README.md","ref":"Linux/README.md","articles":[{"title":"vim操作就快捷键","level":"1.3.1","depth":2,"path":"Linux/VIM操作及快捷键.md","ref":"Linux/VIM操作及快捷键.md","articles":[]},{"title":"通过VNC访问Ubuntu远程桌面","level":"1.3.2","depth":2,"path":"Linux/通过VNC访问Ubuntu远程桌面.md","ref":"Linux/通过VNC访问Ubuntu远程桌面.md","articles":[]},{"title":"Git命令","level":"1.3.3","depth":2,"path":"Linux/GIT命令.md","ref":"Linux/GIT命令.md","articles":[]}]},"previous":{"title":"装饰器","level":"1.2.3","depth":2,"path":"Python/Python装饰器.md","ref":"Python/Python装饰器.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/python代码风格指南.md","mtime":"2020-12-24T07:00:47.292Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-24T07:39:00.003Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
