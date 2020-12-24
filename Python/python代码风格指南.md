@@ -1,4 +1,3 @@
-[Toc]
 # python语言规范
 [参考文档](https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/contents/)
 ## Lint
@@ -61,7 +60,8 @@ local_var_name
 4. 将相关的类和顶级函数放在同一个模块里. 不像Java, 没必要限制一个类一个模块.
 5. 对类名使用大写字母开头的单词(如CapWords, 即Pascal风格), 但是模块名应该用小写加下划线的方式(如lower_with_under.py). 尽管已经有很多现存的模块使用类似于CapWords.py这样的命名, 但现在已经不鼓励这样做, 因为如果模块名碰巧和类名一致, 这会让人困扰.
 
-python之父Guido推荐的规范
+> python之父Guido推荐的规范
+
 类型|公共|内部
 ----|---|---
 Modules | lower_with_under | _lower_with_under

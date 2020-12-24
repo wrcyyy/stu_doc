@@ -1,4 +1,3 @@
-[Toc]
 # 无穷迭代器
 - count()
 ```python
