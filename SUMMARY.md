@@ -30,3 +30,5 @@
   * [Mininet学习](Linux/mininet.md)
   * [Linux常用命令](Linux/Linux常用命令.md)
   * [FRP内网穿透](Linux/frp内网穿透.md)
+* [软件测试](ST_DOC/README.md)
+  * [软件测试面试题目](ST_DOC/question.md)
