@@ -31,10 +31,11 @@
   * [2.5. Linux常用命令](Linux/Linux常用命令.md)
   * [2.6. FRP内网穿透](Linux/frp内网穿透.md)
   
-* [3. Docker学习](Docker/README.md)
+* [3. Docker & Kubernetes](Docker/README.md)
   * [3.1. Docker安装及配置](Docker/docker安装&配置.md)
   * [3.2. Docker常用命令](Docker/docker常用命令.md)
   * [3.3. Docker镜像相关](Docker/docker镜像制作.md)
   * [3.4. Docker镜像自动更新](Docker/docker镜像更新.md)
+  * [3.5. Kubernetes学习](Docker/kubernetes学习.md)
 * [4. 软件测试](ST_DOC/README.md)
   * [4.1. 软件测试面试题目](ST_DOC/question.md)
