@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>4. 软件测试 · GitBook</title>
+        <title>3.4. Docker镜像自动更新 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="question.html" />
+    <link rel="next" href="../ST_DOC/" />
     
     
-    <link rel="prev" href="../Docker/docker镜像更新.html" />
+    <link rel="prev" href="docker镜像制作.html" />
     
 
     </head>
@@ -490,9 +490,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../Docker/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../Docker/">
+                <a href="./">
             
                     
                     3. Docker学习
@@ -504,9 +504,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../Docker/docker安装&配置.html">
+        <li class="chapter " data-level="1.4.1" data-path="docker安装&配置.html">
             
-                <a href="../Docker/docker安装&配置.html">
+                <a href="docker安装&配置.html">
             
                     
                     3.1. Docker安装及配置
@@ -517,9 +517,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../Docker/docker常用命令.html">
+        <li class="chapter " data-level="1.4.2" data-path="docker常用命令.html">
             
-                <a href="../Docker/docker常用命令.html">
+                <a href="docker常用命令.html">
             
                     
                     3.2. Docker常用命令
@@ -530,9 +530,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../Docker/docker镜像制作.html">
+        <li class="chapter " data-level="1.4.3" data-path="docker镜像制作.html">
             
-                <a href="../Docker/docker镜像制作.html">
+                <a href="docker镜像制作.html">
             
                     
                     3.3. Docker镜像相关
@@ -543,9 +543,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../Docker/docker镜像更新.html">
+        <li class="chapter active" data-level="1.4.4" data-path="docker镜像更新.html">
             
-                <a href="../Docker/docker镜像更新.html">
+                <a href="docker镜像更新.html">
             
                     
                     3.4. Docker镜像自动更新
@@ -561,9 +561,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../ST_DOC/">
             
-                <a href="./">
+                <a href="../ST_DOC/">
             
                     
                     4. 软件测试
@@ -575,9 +575,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="question.html">
+        <li class="chapter " data-level="1.5.1" data-path="../ST_DOC/question.html">
             
-                <a href="question.html">
+                <a href="../ST_DOC/question.html">
             
                     
                     4.1. 软件测试面试题目
@@ -623,7 +623,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >4. 软件测试</a>
+        <a href=".." >3.4. Docker镜像自动更新</a>
     </h1>
 </div>
 
@@ -638,7 +638,134 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x884C;&#x4E1A;&#x77E5;&#x8BC6;&#x79EF;&#x7D2F;</p>
+                                <h1 id="&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x955C;&#x50CF;&#x5DE5;&#x5177;--watchtower">&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x955C;&#x50CF;&#x5DE5;&#x5177;--Watchtower</h1>
+<p>Watchtower &#x76D1;&#x89C6;&#x8FD0;&#x884C;&#x5BB9;&#x5668;&#x5E76;&#x76D1;&#x89C6;&#x8FD9;&#x4E9B;&#x5BB9;&#x5668;&#x6700;&#x521D;&#x542F;&#x52A8;&#x65F6;&#x7684;&#x955C;&#x50CF;&#x6709;&#x6CA1;&#x6709;&#x53D8;&#x52A8;&#x3002;&#x5F53; Watchtower &#x68C0;&#x6D4B;&#x5230;&#x4E00;&#x4E2A;&#x955C;&#x50CF;&#x5DF2;&#x7ECF;&#x6709;&#x53D8;&#x52A8;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4F7F;&#x7528;&#x65B0;&#x955C;&#x50CF;&#x81EA;&#x52A8;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x76F8;&#x5E94;&#x7684;&#x5BB9;&#x5668;&#x3002;</p>
+<h2 id="&#x5FEB;&#x901F;&#x5F00;&#x59CB;">&#x5FEB;&#x901F;&#x5F00;&#x59CB;</h2>
+<p>&#x53EA;&#x9700;&#x8981;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5C31;&#x53EF;&#x542F;&#x52A8;<code>watchtower</code>&#xFF1A;</p>
+<pre><code class="lang-shell">docker run -d \
+    --name watchtower \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    containrrr/watchtower
+</code></pre>
+<h2 id="&#x9009;&#x9879;&#x53C2;&#x6570;">&#x9009;&#x9879;&#x53C2;&#x6570;</h2>
+<pre><code class="lang-text">$ docker run --rm containrrr/watchtower -h
+
+Watchtower automatically updates running Docker containers whenever a new image is released.
+More information available at https://github.com/containrrr/watchtower/.
+
+Usage:
+  watchtower [flags]
+
+Flags:
+  -a, --api-version string                          api version to use by docker client (default &quot;1.25&quot;)
+  -c, --cleanup                                     remove previously used images after updating
+  -d, --debug                                       enable debug mode with verbose logging
+      --enable-lifecycle-hooks                      Enable the execution of commands triggered by pre- and post-update lifecycle hooks
+  -h, --help                                        help for watchtower
+  -H, --host string                                 daemon socket to connect to (default &quot;unix:///var/run/docker.sock&quot;)
+      --http-api                                    Runs Watchtower in HTTP API mode, so that image updates must to be triggered by a request
+      --http-api-token string                       Sets an authentication token to HTTP API requests.
+  -S, --include-stopped                             Will also include created and exited containers
+  -i, --interval int                                poll interval (in seconds) (default 86400)
+  -e, --label-enable                                watch containers where the com.centurylinklabs.watchtower.enable label is true
+  -m, --monitor-only                                Will only monitor for new images, not update the containers
+      --no-color                                    Disable ANSI color escape codes in log output
+      --no-pull                                     do not pull any new images
+      --no-restart                                  do not restart any containers
+      --no-startup-message                          Prevents watchtower from sending a startup message
+      --notification-email-delay int                Delay before sending notifications, expressed in seconds
+      --notification-email-from string              Address to send notification emails from
+      --notification-email-server string            SMTP server to send notification emails through
+      --notification-email-server-password string   SMTP server password for sending notifications
+      --notification-email-server-port int          SMTP server port to send notification emails through (default 25)
+      --notification-email-server-tls-skip-verify   Controls whether watchtower verifies the SMTP server&apos;s certificate chain and host name.
+                                                    Should only be used for testing.
+      --notification-email-server-user string       SMTP server user for sending notifications
+      --notification-email-subjecttag string        Subject prefix tag for notifications via mail
+      --notification-email-to string                Address to send notification emails to
+      --notification-gotify-tls-skip-verify         Controls whether watchtower verifies the Gotify server&apos;s certificate chain and host name.
+                                                    Should only be used for testing.
+      --notification-gotify-token string            The Gotify Application required to query the Gotify API
+      --notification-gotify-url string              The Gotify URL to send notifications to
+      --notification-msteams-data                   The MSTeams notifier will try to extract log entry fields as MSTeams message facts
+      --notification-msteams-hook string            The MSTeams WebHook URL to send notifications to
+      --notification-slack-channel string           A string which overrides the webhook&apos;s default channel. Example: #my-custom-channel
+      --notification-slack-hook-url string          The Slack Hook URL to send notifications to
+      --notification-slack-icon-emoji string        An emoji code string to use in place of the default icon
+      --notification-slack-icon-url string          An icon image URL string to use in place of the default icon
+      --notification-slack-identifier string        A string which will be used to identify the messages coming from this watchtower instance (default &quot;watchtower&quot;)
+      --notification-template string                The shoutrrr text/template for the messages
+      --notification-url stringArray                The shoutrrr URL to send notifications to
+  -n, --notifications strings                        notification types to send (valid: email, slack, msteams, gotify, shoutrrr)
+      --notifications-level string                  The log level used for sending notifications. Possible values: panic, fatal, error, warn, info or debug (default &quot;info&quot;)
+      --remove-volumes                              remove attached volumes before updating
+      --revive-stopped                              Will also start stopped containers that were updated, if include-stopped is active
+      --rolling-restart                             Restart containers one at a time
+  -R, --run-once                                    Run once now and exit
+  -s, --schedule string                             the cron expression which defines when to update
+      --scope string                                Defines a monitoring scope for the Watchtower instance.
+  -t, --stop-timeout duration                       timeout before a container is forcefully stopped (default 10s)
+  -v, --tlsverify                                   use TLS and verify the remote
+      --trace                                       enable trace mode with very verbose logging - caution, exposes credentials
+</code></pre>
+<h2 id="&#x81EA;&#x52A8;&#x6E05;&#x9664;&#x65E7;&#x7684;&#x955C;&#x50CF;">&#x81EA;&#x52A8;&#x6E05;&#x9664;&#x65E7;&#x7684;&#x955C;&#x50CF;</h2>
+<p>&#x5B98;&#x65B9;&#x7ED9;&#x51FA;&#x7684;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x5728;&#x957F;&#x671F;&#x4F7F;&#x7528;&#x540E;&#x4F1A;&#x5806;&#x79EF;&#x975E;&#x5E38;&#x591A;&#x7684;&#x6807;&#x7B7E;&#x4E3A;<code>none</code>&#x7684;&#x65E7;&#x955C;&#x50CF;&#xFF0C;&#x5982;&#x679C;&#x653E;&#x4EFB;&#x4E0D;&#x7BA1;&#x4F1A;&#x5360;&#x7528;&#x5927;&#x91CF;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x3002;&#x8981;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x53EF;&#x4EE5;&#x52A0;&#x5165;<code>--cleanup</code>&#x6216;<code>-c</code> &#x9009;&#x9879;&#xFF0C;&#x8FD9;&#x6837;&#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x90FD;&#x4F1A;&#x628A;&#x65E7;&#x7684;&#x955C;&#x50CF;&#x6E05;&#x7406;&#x6389;&#x3002;</p>
+<pre><code class="lang-shell">docker run -d \
+    --name watchtower \
+    --restart unless-stopped \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    containrrr/watchtower -c
+</code></pre>
+<h2 id="&#x9009;&#x62E9;&#x6027;&#x81EA;&#x52A8;&#x66F4;&#x65B0;">&#x9009;&#x62E9;&#x6027;&#x81EA;&#x52A8;&#x66F4;&#x65B0;</h2>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x53EA;&#x60F3;&#x66F4;&#x65B0;<code>nginx</code>&#x3001;<code>redis</code>&#x8FD9;&#x4E24;&#x4E2A;&#x5BB9;&#x5668;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x5BB9;&#x5668;&#x540D;&#x79F0;&#x8FFD;&#x52A0;&#x5230;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x7684;&#x6700;&#x540E;&#x9762;</p>
+<pre><code class="lang-shell">docker run -d \
+    --name watchtower \
+    --restart unless-stopped \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    containrrr/watchtower -c nginx redis
+</code></pre>
+<h2 id="&#x8BBE;&#x7F6E;&#x5355;&#x4E2A;&#x5BB9;&#x5668;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x7279;&#x5F81;">&#x8BBE;&#x7F6E;&#x5355;&#x4E2A;&#x5BB9;&#x5668;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x7279;&#x5F81;</h2>
+<p>&#x7ED9;&#x5BB9;&#x5668;&#x4E2D;&#x6DFB;&#x52A0;<code>com.centurylinklabs.watchtower.enable</code>&#x8FD9;&#x4E2A;<code>LABEL</code>&#x5E76;&#x8BBE;&#x7F6E;&#x5B83;&#x7684;&#x503C;&#x4E3A;<code>false</code>&#xFF0C;&#x6216;&#x8005;&#x5728;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x4E2D;&#x52A0;&#x5165;<code>--label com.centurylinklabs.watchtower.enable=false</code>&#x53C2;&#x6570;Watchtower &#x5C06;&#x6C38;&#x8FDC;&#x5FFD;&#x7565;&#x5B83;&#x7684;&#x66F4;&#x65B0;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x5305;&#x542B;&#x5728;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x5217;&#x8868;&#x4E2D;</p>
+<pre><code class="lang-text">docker run -d --name ubuntu --restart always --label com.centurylinklabs.watchtower.enable=false ubuntu
+</code></pre>
+<p>&#x5F53;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x4E2D;&#x52A0;&#x5165;<code>--label com.centurylinklabs.watchtower.enable=true</code>&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x7ED9;<code>Watchtower</code>&#x52A0;&#x4E0A;<code>--label-enable</code>&#x9009;&#x9879;&#x65F6;&#xFF0C;<code>Watchtower</code>&#x5C06;&#x53EA;&#x66F4;&#x65B0;&#x8FD9;&#x4E9B;&#x5305;&#x542B;&#x6B64;&#x53C2;&#x6570;&#x7684;&#x5BB9;&#x5668;&#x3002;</p>
+<pre><code class="lang-text">docker run -d \
+    --name watchtower \
+    --restart unless-stopped \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    containrrr/watchtower -c \
+    --label-enable
+</code></pre>
+<blockquote>
+<p><code>--label-enable</code>&#x53EF;&#x4EE5;&#x7B80;&#x5199;&#x4E3A;<code>-e</code>&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-text">docker run -d \
+    --name watchtower \
+    --restart unless-stopped \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    containrrr/watchtower -ce
+</code></pre>
+<h2 id="&#x8BBE;&#x7F6E;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x68C0;&#x67E5;&#x9891;&#x7387;">&#x8BBE;&#x7F6E;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x68C0;&#x67E5;&#x9891;&#x7387;</h2>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;<code>Watchtower</code>&#x6BCF; 5 &#x5206;&#x949F;&#x4F1A;&#x8F6E;&#x8BE2;&#x4E00;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x89C9;&#x5F97;&#x8FD9;&#x4E2A;&#x9891;&#x7387;&#x592A;&#x9AD8;&#x4E86;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x9009;&#x9879;&#x6765;&#x63A7;&#x5236;&#x66F4;&#x65B0;&#x68C0;&#x67E5;&#x7684;&#x9891;&#x7387;&#xFF0C;&#x4F46;&#x4E8C;&#x8005;&#x53EA;&#x80FD;&#x9009;&#x62E9;&#x5176;&#x4E00;&#x3002;</p>
+<ul>
+<li><p><code>--interval</code>&#x6216;<code>-i</code>&#x8BBE;&#x7F6E;&#x66F4;&#x65B0;&#x68C0;&#x6D4B;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF0C;&#x5355;&#x4F4D;&#x4E3A;&#x79D2;&#x3002;&#x5982;&#x6BCF;&#x5C0F;&#x65F6;&#x68C0;&#x67E5;&#x4E00;&#x6B21;&#xFF1A;</p>
+<pre><code class="lang-text">  docker run -d \
+      --name watchtower \
+      --restart unless-stopped \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      containrrr/watchtower -c \
+      --interval 3600
+</code></pre>
+</li>
+<li><code>--schedule</code>&#x6216;<code>-s</code>&#x8BBE;&#x7F6E;&#x5B9A;&#x65F6;&#x68C0;&#x6D4B;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#x3002;&#x683C;&#x5F0F;&#x4E3A;6&#x5B57;&#x6BB5;Cron&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5373;&#x7B2C;&#x4E00;&#x4F4D;&#x4E3A;&#x79D2;&#x3002;&#x5982;&#x6BCF;&#x5929;&#x51CC;&#x6668;2&#x70B9;&#x68C0;&#x67E5;&#x4E00;&#x6B21;&#x66F4;&#x65B0;&#xFF1A;<pre><code class="lang-text">  docker run -d \
+      --name watchtower \
+      --restart unless-stopped \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      containrrr/watchtower -c \
+      --schedule &quot;0 0 2 * * *&quot;
+</code></pre>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -666,12 +793,12 @@
 
             
                 
-                <a href="../Docker/docker镜像更新.html" class="navigation navigation-prev " aria-label="Previous page: 3.4. Docker镜像自动更新">
+                <a href="docker镜像制作.html" class="navigation navigation-prev " aria-label="Previous page: 3.3. Docker镜像相关">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="question.html" class="navigation navigation-next " aria-label="Next page: 4.1. 软件测试面试题目">
+                <a href="../ST_DOC/" class="navigation navigation-next " aria-label="Next page: 4. 软件测试">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -682,7 +809,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4. 软件测试","level":"1.5","depth":1,"next":{"title":"4.1. 软件测试面试题目","level":"1.5.1","depth":2,"path":"ST_DOC/question.md","ref":"ST_DOC/question.md","articles":[]},"previous":{"title":"3.4. Docker镜像自动更新","level":"1.4.4","depth":2,"path":"Docker/docker镜像更新.md","ref":"Docker/docker镜像更新.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ST_DOC/README.md","mtime":"2021-01-05T08:10:59.980Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-07T09:25:36.353Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.4. Docker镜像自动更新","level":"1.4.4","depth":2,"next":{"title":"4. 软件测试","level":"1.5","depth":1,"path":"ST_DOC/README.md","ref":"ST_DOC/README.md","articles":[{"title":"4.1. 软件测试面试题目","level":"1.5.1","depth":2,"path":"ST_DOC/question.md","ref":"ST_DOC/question.md","articles":[]}]},"previous":{"title":"3.3. Docker镜像相关","level":"1.4.3","depth":2,"path":"Docker/docker镜像制作.md","ref":"Docker/docker镜像制作.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Docker/docker镜像更新.md","mtime":"2021-02-07T09:11:48.960Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-07T09:25:36.353Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
