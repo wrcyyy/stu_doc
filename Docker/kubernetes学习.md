@@ -208,7 +208,7 @@ kubernetes发展非常迅速，已经成为容器编排领域的领导者。
 实验环境在虚拟机中进行使用，一共需要5台虚拟机
 
 角色|hostname|IP|cpu|内存|操作系统|硬盘
----|---|---|---|---|---|---|---
+---|---|---|---|---|---|---|
 LB,DNS|hdss7-11.host.com|10.4.7.11|2C|2G|Centos7|/data/ 50G|
 LB,ETCD|hdss7-12.host.com|10.4.7.12|2C|2G|Centos7|/data/ 50G|
 K8S Master,K8S Node,ETCD|hdss7-21.host.com|10.4.7.21|2C|2G|Centos7|/data/ 50G|
