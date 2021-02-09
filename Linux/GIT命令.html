@@ -651,23 +651,73 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git&#x64A4;&#x9500;&#x4E0A;&#x4E00;&#x6B21;&#x7684;commit&#x64CD;&#x4F5C;">git&#x64A4;&#x9500;&#x4E0A;&#x4E00;&#x6B21;&#x7684;commit&#x64CD;&#x4F5C;</h1>
-<h2 id="&#x4EC5;&#x5728;&#x672C;&#x5730;commit&#x8FD8;&#x672A;push">&#x4EC5;&#x5728;&#x672C;&#x5730;commit&#x8FD8;&#x672A;push</h2>
-<pre><code class="lang-shell">git reset --soft|--mixed|--hard &lt;commit_id&gt;
+                                <h1 id="git-commit">git commit</h1>
+<h2 id="&#x64A4;&#x9500;&#x4E0A;&#x4E00;&#x6B21;&#x7684;commit&#x64CD;&#x4F5C;">&#x64A4;&#x9500;&#x4E0A;&#x4E00;&#x6B21;&#x7684;commit&#x64CD;&#x4F5C;</h2>
+<ul>
+<li>&#x4EC5;&#x5728;&#x672C;&#x5730;commit&#x8FD8;&#x672A;push<pre><code class="lang-shell">git reset --soft|--mixed|--hard &lt;commit_id&gt;
 </code></pre>
-<p>&#x8FD9;&#x91CC;&#x7684;<commit_id>&#x5C31;&#x662F;&#x6BCF;&#x4E00;&#x6B21;commit&#x7684;SHA-1&#xFF0C;&#x53EF;&#x4EE5;&#x5728;log&#x4E2D;&#x67E5;&#x770B;</commit_id></p>
+&#x8FD9;&#x91CC;&#x7684;<commit_id>&#x5C31;&#x662F;&#x6BCF;&#x4E00;&#x6B21;commit&#x7684;SHA-1&#xFF0C;&#x53EF;&#x4EE5;&#x5728;log&#x4E2D;&#x67E5;&#x770B;</commit_id></li>
+</ul>
+<blockquote>
+<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
 <ul>
 <li>--mixed &#x4F1A;&#x4FDD;&#x7559;&#x6E90;&#x7801;&#xFF0C;&#x53EA;&#x662F;&#x5C06;git commit&#x548C;index &#x4FE1;&#x606F;&#x56DE;&#x9000;&#x5230;&#x4E86;&#x67D0;&#x4E2A;&#x7248;&#x672C;</li>
 <li>--soft &#x4FDD;&#x7559;&#x6E90;&#x7801;,&#x53EA;&#x56DE;&#x9000;&#x5230;commit&#x4FE1;&#x606F;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;.&#x4E0D;&#x6D89;&#x53CA;index&#x7684;&#x56DE;&#x9000;,&#x5982;&#x679C;&#x8FD8;&#x9700;&#x8981;&#x63D0;&#x4EA4;,&#x76F4;&#x63A5;commit&#x5373;&#x53EF;</li>
 <li>--hard    &#x6E90;&#x7801;&#x4E5F;&#x4F1A;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;,commit&#x548C;index &#x90FD;&#x4F1A;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;.(&#x6CE8;&#x610F;,&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x6539;&#x53D8;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x4ED3;&#x5E93;&#x6E90;&#x7801;)</li>
 </ul>
-<h2 id="&#x4EE3;&#x7801;&#x5DF2;&#x7ECF;commit&#x5E76;push&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;">&#x4EE3;&#x7801;&#x5DF2;&#x7ECF;commit&#x5E76;push&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</h2>
-<p>&#x5BF9;&#x4E8E;&#x5DF2;&#x7ECF;&#x628A;&#x4EE3;&#x7801;push&#x5230;&#x7EBF;&#x4E0A;&#x4ED3;&#x5E93;,&#x4F60;&#x56DE;&#x9000;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x5176;&#x5B9E;&#x4E5F;&#x60F3;&#x540C;&#x65F6;&#x56DE;&#x9000;&#x7EBF;&#x4E0A;&#x4EE3;&#x7801;,&#x56DE;&#x6EDA;&#x5230;&#x67D0;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x7248;&#x672C;,&#x7EBF;&#x4E0A;,&#x7EBF;&#x4E0B;&#x4EE3;&#x7801;&#x4FDD;&#x6301;&#x4E00;&#x81F4;.&#x4F60;&#x8981;&#x7528;&#x5230;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;</p>
+</blockquote>
+<ul>
+<li>&#x4EE3;&#x7801;&#x5DF2;&#x7ECF;commit&#x5E76;push&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</li>
+</ul>
+<p>&#x5BF9;&#x4E8E;&#x5DF2;&#x7ECF;&#x628A;&#x4EE3;&#x7801;push&#x5230;&#x7EBF;&#x4E0A;&#x4ED3;&#x5E93;,&#x4F60;&#x56DE;&#x9000;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x5176;&#x5B9E;&#x4E5F;&#x60F3;&#x540C;&#x65F6;&#x56DE;&#x9000;&#x7EBF;&#x4E0A;&#x4EE3;&#x7801;,&#x56DE;&#x6EDA;&#x5230;&#x67D0;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x7248;&#x672C;,&#x7EBF;&#x4E0A;&#x3001;&#x7EBF;&#x4E0B;&#x4EE3;&#x7801;&#x4FDD;&#x6301;&#x4E00;&#x81F4;.&#x4F60;&#x8981;&#x7528;&#x5230;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;</p>
 <pre><code class="lang-shell">git revert &lt;commit_id&gt;
 </code></pre>
 <p>revert &#x4E4B;&#x540E;&#x4F60;&#x7684;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x4F1A;&#x56DE;&#x6EDA;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x5386;&#x53F2;&#x7248;&#x672C;,&#x8FD9;&#x65F6;&#x4F60;&#x518D; git push &#x65E2;&#x53EF;&#x4EE5;&#x628A;&#x7EBF;&#x4E0A;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x65B0;&#x3002;</p>
-<hr>
+<blockquote>
 <p>&#x6CE8;&#x610F;&#xFF1A;git revert&#x662F;&#x7528;&#x4E00;&#x6B21;&#x65B0;&#x7684;commit&#x6765;&#x56DE;&#x6EDA;&#x4E4B;&#x524D;&#x7684;commit&#xFF0C;git reset&#x662F;&#x76F4;&#x63A5;&#x5220;&#x9664;&#x6307;&#x5B9A;&#x7684;commit&#xFF0C;&#x770B;&#x4F3C;&#x8FBE;&#x5230;&#x7684;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;,&#x5176;&#x5B9E;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x3002;</p>
+</blockquote>
+<h1 id="git-config&#x547D;&#x4EE4;">git config&#x547D;&#x4EE4;</h1>
+<ul>
+<li>&#x67E5;&#x770B;git&#x914D;&#x7F6E;<blockquote>
+<p>git config --global --list</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="../asset/linux/&#x67E5;&#x770B;git&#x914D;&#x7F6E;.png" alt="&#x67E5;&#x770B;&#x914D;&#x7F6E;"></p>
+<ul>
+<li>&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;&#x548C;&#x53D6;&#x6D88;&#x4EE3;&#x7406;<blockquote>
+<ul>
+<li>git config --global http.proxy <a href="http://127.0.0.1:1080" target="_blank">http://127.0.0.1:1080</a></li>
+<li>git config --global http.proxy &apos;socks5://127.0.0.1:1080&apos;</li>
+<li>git config --global http.proxy &apos;socks5h://127.0.0.1:1080&apos;</li>
+<li>git config --global --unset http.proxy</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h1 id="git-tag&#x64CD;&#x4F5C;">git tag&#x64CD;&#x4F5C;</h1>
+<ul>
+<li>&#x65B0;&#x5EFA;tag<blockquote>
+<p>git tag -a <tag_name> -m <tag_desc></tag_desc></tag_name></p>
+</blockquote>
+</li>
+<li>&#x5220;&#x9664;tag<blockquote>
+<p>git tag -d <tag_name></tag_name></p>
+</blockquote>
+</li>
+<li>&#x63A8;&#x9001;tag&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;<blockquote>
+<p>git push --tags</p>
+</blockquote>
+</li>
+<li>&#x67E5;&#x770B;&#x672C;&#x5730;tag<blockquote>
+<p>git tag -ln</p>
+</blockquote>
+</li>
+<li>&#x83B7;&#x53D6;&#x6307;&#x5B9A;tag&#x7684;&#x4EE3;&#x7801;<blockquote>
+<p>git checkout <tag_name></tag_name></p>
+</blockquote>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -711,7 +761,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3. Git命令","level":"1.3.3","depth":2,"next":{"title":"2.4. Mininet学习","level":"1.3.4","depth":2,"path":"Linux/mininet.md","ref":"Linux/mininet.md","articles":[]},"previous":{"title":"2.2. 通过VNC访问Ubuntu远程桌面","level":"1.3.2","depth":2,"path":"Linux/通过VNC访问Ubuntu远程桌面.md","ref":"Linux/通过VNC访问Ubuntu远程桌面.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/GIT命令.md","mtime":"2020-12-24T07:39:02.955Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-07T10:39:05.282Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3. Git命令","level":"1.3.3","depth":2,"next":{"title":"2.4. Mininet学习","level":"1.3.4","depth":2,"path":"Linux/mininet.md","ref":"Linux/mininet.md","articles":[]},"previous":{"title":"2.2. 通过VNC访问Ubuntu远程桌面","level":"1.3.2","depth":2,"path":"Linux/通过VNC访问Ubuntu远程桌面.md","ref":"Linux/通过VNC访问Ubuntu远程桌面.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/GIT命令.md","mtime":"2021-02-09T02:15:54.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-09T08:37:23.360Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
