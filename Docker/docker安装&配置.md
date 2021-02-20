@@ -25,9 +25,17 @@ sudo chmod 666 /var/run/docker.sock
 > 仅在测试环境进行，不建议在正式环境开启此功能，将端口暴露在公网很容易遭到攻击 
 
 修改`/usr/lib/systemd/system/docker.service`
+```editorconfig
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -H fd:// -H tcp://127.0.0.1:2375
 ```
-# /usr/lib/systemd/system/docker.service
-ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock
+修改完成后重新加载配置并重启服务：
+```shell
+sudo systemctl daemon-reload
+sudo systemctl restart docker.service
+# 检查状态
+sudo netstat -lntp | grep dockerd
 ```
 
 ## 修改docker仓库地址
@@ -42,4 +50,17 @@ ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock
     "https://m2mzl50e.mirror.aliyuncs.com"
   ]
 }
+```
+
+## 设置开机启动
+> 启用开机启动
+```shell
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+```
+
+> 禁用开机启动
+```shell
+sudo systemctl disable docker.service
+sudo systemctl disable containerd.service
 ```
