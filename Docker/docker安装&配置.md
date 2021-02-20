@@ -4,10 +4,18 @@
 3. `apt-get install docker.io -y`
 
 ## 安装docker-compose
+
+### 使用pip安装
+
+推荐使用pip安装：`pip install docker-compose`
+
+### 命令行安装
 ```
 sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ```
+> 根据需要替换最新的版本号
+> 
 > 安装时受防火墙的影响，可以使用代理进行下载
 > 
 > sudo curl -x "http://10.5.17.45:8118" -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
