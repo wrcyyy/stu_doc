@@ -30,6 +30,7 @@
   * [2.4. Mininet学习](Linux/mininet.md)
   * [2.5. Linux常用命令](Linux/Linux常用命令.md)
   * [2.6. FRP内网穿透](Linux/frp内网穿透.md)
+  * [2.7. Karaf简介](Linux/Kafka介绍.md)
   
 * [3. Docker & Kubernetes](Docker/README.md)
   * [3.1. Docker安装及配置](Docker/docker安装&配置.md)
