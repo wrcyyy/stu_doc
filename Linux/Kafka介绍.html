@@ -744,12 +744,12 @@
 </ul>
 <blockquote>
 <p>Broker&#x7684;&#x65E0;&#x72B6;&#x6001;&#x673A;&#x5236;</p>
+</blockquote>
 <ul>
 <li>Broker&#x6CA1;&#x6709;&#x526F;&#x672C;&#x673A;&#x5236;&#xFF0C;&#x4E00;&#x65E6;Broker&#x5B95;&#x673A;&#xFF0C;&#x6539;Broker&#x7684;&#x6D88;&#x606F;&#x5C06;&#x90FD;&#x4E0D;&#x53EF;&#x7528;</li>
 <li>&#x65E0;&#x72B6;&#x6001;&#x5BFC;&#x81F4;&#x6D88;&#x606F;&#x7684;&#x5220;&#x9664;&#x79F0;&#x4E3A;&#x96BE;&#x9898;&#xFF08;&#x53EF;&#x80FD;&#x5220;&#x9664;&#x7684;&#x6D88;&#x606F;&#x6B63;&#x5728;&#x88AB;&#x8BA2;&#x9605;&#xFF09;&#xFF0C;Kafka&#x91C7;&#x7528;&#x57FA;&#x4E8E;&#x65F6;&#x95F4;&#x7684;SLA&#xFF08;&#x670D;&#x52A1;&#x6C34;&#x5E73;&#x4FDD;&#x8BC1;&#xFF09;&#xFF0C;&#x6D88;&#x606F;&#x4FDD;&#x5B58;&#x4E00;&#x5B9A;&#x65F6;&#x95F4;&#xFF08;&#x901A;&#x5E38;&#x4E3A;7&#x5929;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#xFF09;&#x540E;&#x4F1A;&#x88AB;&#x5220;&#x9664;</li>
 <li>&#x6D88;&#x606F;&#x8BA2;&#x9605;&#x8005;&#x53EF;&#x4EE5;rewind back&#x5230;&#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#x91CD;&#x65B0;&#x8FDB;&#x884C;&#x6D88;&#x8D39;&#xFF0C;&#x5F53;&#x8BA2;&#x9605;&#x8005;&#x6545;&#x969C;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6700;&#x5C0F;&#x7684;offset&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x8BFB;&#x53D6;&#x6D88;&#x8D39;&#x4FE1;&#x606F;</li>
 </ul>
-</blockquote>
 <h1 id="kafka&#x670D;&#x52A1;&#x642D;&#x5EFA;&#x53CA;&#x4F7F;&#x7528;">Kafka&#x670D;&#x52A1;&#x642D;&#x5EFA;&#x53CA;&#x4F7F;&#x7528;</h1>
 <h2 id="&#x670D;&#x52A1;&#x642D;&#x5EFA;">&#x670D;&#x52A1;&#x642D;&#x5EFA;</h2>
 <p>&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x5355;&#x4E2A;Broker&#x7684;Kafka&#x670D;&#x52A1;&#x642D;&#x5EFA;</p>
@@ -783,11 +783,11 @@
 <p><code>bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test_topic_wrc</code></p>
 <ul>
 <li>--replication-factor &#x53C2;&#x6570;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x8BE5;Topic&#x7684;&#x526F;&#x672C;&#x6570;</li>
-<li>--partitions &#x53C2;&#x6570;&#x6307;&#x5B9A;&#x8BE5;Topic&#x7684;&#x5206;&#x533A;&#x6570;<blockquote>
+<li>--partitions &#x53C2;&#x6570;&#x6307;&#x5B9A;&#x8BE5;Topic&#x7684;&#x5206;&#x533A;&#x6570;</li>
+</ul>
+<blockquote>
 <p>&#x521B;&#x5EFA;Producer</p>
 </blockquote>
-</li>
-</ul>
 <p><code>bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test</code></p>
 <p>&#x6267;&#x884C;&#x4E0A;&#x8FF0;&#x547D;&#x4EE4;&#x540E;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x5165;&#x4FE1;&#x606F;&#x5C31;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x4E86;</p>
 <blockquote>
@@ -841,7 +841,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.7. Karaf简介","level":"1.3.7","depth":2,"next":{"title":"3. Docker & Kubernetes","level":"1.4","depth":1,"path":"Docker/README.md","ref":"Docker/README.md","articles":[{"title":"3.1. Docker安装及配置","level":"1.4.1","depth":2,"path":"Docker/docker安装&配置.md","ref":"Docker/docker安装&配置.md","articles":[]},{"title":"3.2. Docker常用命令","level":"1.4.2","depth":2,"path":"Docker/docker常用命令.md","ref":"Docker/docker常用命令.md","articles":[]},{"title":"3.3. Docker镜像相关","level":"1.4.3","depth":2,"path":"Docker/docker镜像制作.md","ref":"Docker/docker镜像制作.md","articles":[]},{"title":"3.4. Docker镜像自动更新","level":"1.4.4","depth":2,"path":"Docker/docker镜像更新.md","ref":"Docker/docker镜像更新.md","articles":[]},{"title":"3.5. Kubernetes学习","level":"1.4.5","depth":2,"path":"Docker/kubernetes学习.md","ref":"Docker/kubernetes学习.md","articles":[]}]},"previous":{"title":"2.6. FRP内网穿透","level":"1.3.6","depth":2,"path":"Linux/frp内网穿透.md","ref":"Linux/frp内网穿透.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/Kafka介绍.md","mtime":"2021-02-23T01:21:07.729Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-23T01:21:21.578Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.7. Karaf简介","level":"1.3.7","depth":2,"next":{"title":"3. Docker & Kubernetes","level":"1.4","depth":1,"path":"Docker/README.md","ref":"Docker/README.md","articles":[{"title":"3.1. Docker安装及配置","level":"1.4.1","depth":2,"path":"Docker/docker安装&配置.md","ref":"Docker/docker安装&配置.md","articles":[]},{"title":"3.2. Docker常用命令","level":"1.4.2","depth":2,"path":"Docker/docker常用命令.md","ref":"Docker/docker常用命令.md","articles":[]},{"title":"3.3. Docker镜像相关","level":"1.4.3","depth":2,"path":"Docker/docker镜像制作.md","ref":"Docker/docker镜像制作.md","articles":[]},{"title":"3.4. Docker镜像自动更新","level":"1.4.4","depth":2,"path":"Docker/docker镜像更新.md","ref":"Docker/docker镜像更新.md","articles":[]},{"title":"3.5. Kubernetes学习","level":"1.4.5","depth":2,"path":"Docker/kubernetes学习.md","ref":"Docker/kubernetes学习.md","articles":[]}]},"previous":{"title":"2.6. FRP内网穿透","level":"1.3.6","depth":2,"path":"Linux/frp内网穿透.md","ref":"Linux/frp内网穿透.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/Kafka介绍.md","mtime":"2021-02-23T01:24:02.088Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-23T01:24:08.925Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
