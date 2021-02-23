@@ -62,3 +62,58 @@ Partition是物理上的概念，每个Topic包含一个或者多个Partition
 - 可以认为一个Consumer Group为一个订阅者，一个Topic中的每个Partition只会被一个订阅者中的一个Consumer消费；不过一个Consumer可以消费多个Partition中的消息。
 - Kafka只能保证一个Partition中的消息被某个Consumer消费时，消息是顺序的。但从Topic的角度来说，消息仍不是有序的
 - Kafka设计原理决定了对于一个Topic，同一Consumer Group中不能有多于Partitions个数的Consumer，否则有部分Consumer无法得到消息
+
+## Broker
+
+- Kafka集群包含一个或多个服务器，服务器节点称为Broker
+- 为了减少磁盘写入的次数，Broker会将消息暂时buffer起来，当消息的个数（或尺寸）达到一定阈值时，在flush到磁盘，这样减少了磁盘IO调用的次数
+
+> Broker的无状态机制
+- Broker没有副本机制，一旦Broker宕机，改Broker的消息将都不可用
+- 无状态导致消息的删除称为难题（可能删除的消息正在被订阅），Kafka采用基于时间的SLA（服务水平保证），消息保存一定时间（通常为7天，也可以自定义）后会被删除
+- 消息订阅者可以rewind back到任意位置重新进行消费，当订阅者故障时，可以选择最小的offset进行重新读取消费信息
+
+# Kafka服务搭建及使用
+## 服务搭建
+这里简单介绍一下单个Broker的Kafka服务搭建
+
+> 创建docker-compose.yml文件
+
+```yaml
+version: '2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 192.168.99.100
+      KAFKA_CREATE_TOPICS: "test:1:1"
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+```
+> 使用`docker-compose up -d`启动容器
+
+## 简单上手
+资源创建需要在容器控制台进行
+> 创建Topic
+
+`bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test_topic_wrc`
+
+- --replication-factor 参数用于指定该Topic的副本数
+- --partitions 参数指定该Topic的分区数
+> 创建Producer
+
+`bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test`
+
+执行上述命令后在控制台输入信息就可以发送到服务器上了
+> 创建Consumer
+
+`bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning`
+- --from-beginning用于从分区起始位置读取数据
+
+Producer发送数据后，Consumer就能立即收到相同的数据了
