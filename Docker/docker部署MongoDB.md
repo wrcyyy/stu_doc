@@ -34,5 +34,3 @@ services:
 
 > 执行docker-compose up -d 启动服务
 
-# 基本命令
-
