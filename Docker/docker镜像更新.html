@@ -107,7 +107,7 @@
                 <a href="../Python/">
             
                     
-                    1. python相关
+                    1. python
             
                 </a>
             
@@ -249,7 +249,7 @@
                 <a href="../Linux/">
             
                     
-                    2. Linux相关
+                    2. Linux
             
                 </a>
             
@@ -602,10 +602,12 @@ Flags:
     containrrr/watchtower -c nginx redis
 </code></pre>
 <h2 id="&#x8BBE;&#x7F6E;&#x5355;&#x4E2A;&#x5BB9;&#x5668;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x7279;&#x5F81;">&#x8BBE;&#x7F6E;&#x5355;&#x4E2A;&#x5BB9;&#x5668;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x7279;&#x5F81;</h2>
-<p>&#x7ED9;&#x5BB9;&#x5668;&#x4E2D;&#x6DFB;&#x52A0;<code>com.centurylinklabs.watchtower.enable</code>&#x8FD9;&#x4E2A;<code>LABEL</code>&#x5E76;&#x8BBE;&#x7F6E;&#x5B83;&#x7684;&#x503C;&#x4E3A;<code>false</code>&#xFF0C;&#x6216;&#x8005;&#x5728;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x4E2D;&#x52A0;&#x5165;<code>--label com.centurylinklabs.watchtower.enable=false</code>&#x53C2;&#x6570;Watchtower &#x5C06;&#x6C38;&#x8FDC;&#x5FFD;&#x7565;&#x5B83;&#x7684;&#x66F4;&#x65B0;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x5305;&#x542B;&#x5728;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x5217;&#x8868;&#x4E2D;</p>
+<p>&#x7ED9;&#x5BB9;&#x5668;&#x4E2D;&#x6DFB;&#x52A0;<code>com.centurylinklabs.watchtower.enable</code>&#x8FD9;&#x4E2A;<code>LABEL</code>&#x5E76;&#x8BBE;&#x7F6E;&#x5B83;&#x7684;&#x503C;&#x4E3A;<code>false</code>
+&#xFF0C;&#x6216;&#x8005;&#x5728;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x4E2D;&#x52A0;&#x5165;<code>--label com.centurylinklabs.watchtower.enable=false</code>&#x53C2;&#x6570;Watchtower &#x5C06;&#x6C38;&#x8FDC;&#x5FFD;&#x7565;&#x5B83;&#x7684;&#x66F4;&#x65B0;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x5305;&#x542B;&#x5728;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x5217;&#x8868;&#x4E2D;</p>
 <pre><code class="lang-text">docker run -d --name ubuntu --restart always --label com.centurylinklabs.watchtower.enable=false ubuntu
 </code></pre>
-<p>&#x5F53;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x4E2D;&#x52A0;&#x5165;<code>--label com.centurylinklabs.watchtower.enable=true</code>&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x7ED9;<code>Watchtower</code>&#x52A0;&#x4E0A;<code>--label-enable</code>&#x9009;&#x9879;&#x65F6;&#xFF0C;<code>Watchtower</code>&#x5C06;&#x53EA;&#x66F4;&#x65B0;&#x8FD9;&#x4E9B;&#x5305;&#x542B;&#x6B64;&#x53C2;&#x6570;&#x7684;&#x5BB9;&#x5668;&#x3002;</p>
+<p>&#x5F53;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x4E2D;&#x52A0;&#x5165;<code>--label com.centurylinklabs.watchtower.enable=true</code>&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x7ED9;<code>Watchtower</code>&#x52A0;&#x4E0A;<code>--label-enable</code>&#x9009;&#x9879;&#x65F6;&#xFF0C;<code>Watchtower</code>
+&#x5C06;&#x53EA;&#x66F4;&#x65B0;&#x8FD9;&#x4E9B;&#x5305;&#x542B;&#x6B64;&#x53C2;&#x6570;&#x7684;&#x5BB9;&#x5668;&#x3002;</p>
 <pre><code class="lang-text">docker run -d \
     --name watchtower \
     --restart unless-stopped \
@@ -686,7 +688,7 @@ Flags:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.4. Docker镜像自动更新","level":"1.4.4","depth":2,"next":{"title":"3.5. Kubernetes学习","level":"1.4.5","depth":2,"path":"Docker/kubernetes学习.md","ref":"Docker/kubernetes学习.md","articles":[]},"previous":{"title":"3.3. Docker镜像相关","level":"1.4.3","depth":2,"path":"Docker/docker镜像制作.md","ref":"Docker/docker镜像制作.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Docker/docker镜像更新.md","mtime":"2021-02-07T09:11:48.960Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-23T05:46:46.977Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.4. Docker镜像自动更新","level":"1.4.4","depth":2,"next":{"title":"3.5. Kubernetes学习","level":"1.4.5","depth":2,"path":"Docker/kubernetes学习.md","ref":"Docker/kubernetes学习.md","articles":[]},"previous":{"title":"3.3. Docker镜像相关","level":"1.4.3","depth":2,"path":"Docker/docker镜像制作.md","ref":"Docker/docker镜像制作.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Docker/docker镜像更新.md","mtime":"2021-03-01T15:09:40.040Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-01T16:01:56.518Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

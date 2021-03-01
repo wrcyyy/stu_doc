@@ -107,7 +107,7 @@
                 <a href="../Python/">
             
                     
-                    1. python相关
+                    1. python
             
                 </a>
             
@@ -249,7 +249,7 @@
                 <a href="./">
             
                     
-                    2. Linux相关
+                    2. Linux
             
                 </a>
             
@@ -516,7 +516,8 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x4EC0;&#x4E48;&#x662F;frp">&#x4EC0;&#x4E48;&#x662F;FRP</h1>
-<p>frp &#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x4E8E;&#x5185;&#x7F51;&#x7A7F;&#x900F;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x7684;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x5E94;&#x7528;&#xFF0C;&#x652F;&#x6301; tcp, udp &#x534F;&#x8BAE;&#xFF0C;&#x4E3A; http &#x548C; https &#x5E94;&#x7528;&#x534F;&#x8BAE;&#x63D0;&#x4F9B;&#x4E86;&#x989D;&#x5916;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x4E14;&#x5C1D;&#x8BD5;&#x6027;&#x652F;&#x6301;&#x4E86;&#x70B9;&#x5BF9;&#x70B9;&#x7A7F;&#x900F;&#x3002;<a href="https://github.com/fatedier/frp" target="_blank">&#x9879;&#x76EE;&#x5730;&#x5740;</a></p>
+<p>frp &#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x4E8E;&#x5185;&#x7F51;&#x7A7F;&#x900F;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x7684;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x5E94;&#x7528;&#xFF0C;&#x652F;&#x6301; tcp, udp &#x534F;&#x8BAE;&#xFF0C;&#x4E3A; http &#x548C; https
+&#x5E94;&#x7528;&#x534F;&#x8BAE;&#x63D0;&#x4F9B;&#x4E86;&#x989D;&#x5916;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x4E14;&#x5C1D;&#x8BD5;&#x6027;&#x652F;&#x6301;&#x4E86;&#x70B9;&#x5BF9;&#x70B9;&#x7A7F;&#x900F;&#x3002;<a href="https://github.com/fatedier/frp" target="_blank">&#x9879;&#x76EE;&#x5730;&#x5740;</a></p>
 <h1 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h1>
 <h2 id="ssh&#x548C;web&#x8BBF;&#x95EE;">SSH&#x548C;WEB&#x8BBF;&#x95EE;</h2>
 <ol>
@@ -535,8 +536,11 @@
 <span class="hljs-attr">     volumes:</span>
 <span class="hljs-bullet">       -</span> /home/frps/frps.ini:/etc/frp/frps.ini
 </code></pre>
-<p>&#x6216;&#x8005;&#x901A;&#x8FC7;<code>docker run --restart=always --network host -d -v /mnt/sda3/frpc/frpc.ini:/etc/frp/frpc.ini --name frpc snowdreamtech/frpc</code>&#x547D;&#x4EE4;&#x542F;&#x52A8;</p>
 </li>
+</ol>
+<p>&#x6216;&#x8005;&#x901A;&#x8FC7;<code>docker run --restart=always --network host -d -v /mnt/sda3/frpc/frpc.ini:/etc/frp/frpc.ini --name frpc snowdreamtech/frpc</code>
+&#x547D;&#x4EE4;&#x542F;&#x52A8;</p>
+<ol>
 <li><p>&#x5728;&#x5185;&#x7F51;&#x673A;&#x5668;&#x4E0A;&#x642D;&#x5EFA;<code>frp-client</code>&#xFF0C;&#x901A;&#x8FC7;&#x4FEE;&#x6539;<code>frpc.ini</code>&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x7AEF;&#x53E3;&#xFF0C;&#x8FD9;&#x91CC;&#x5047;&#x8BBE;&#x516C;&#x7F51;IP&#x5730;&#x5740;&#x4E3A;X.X.X.X&#xFF1A;</p>
 <pre><code> [common]
  server_addr = X.X.X.X
@@ -553,7 +557,7 @@
  local_port = 80
  custom_domains = www.yourdomain.com
 </code></pre></li>
-<li><p>&#x542F;&#x52A8;<code>frp-client</code>&#xFF0C;&#x8FD9;&#x91CC;&#x901A;&#x8FC7;<code>docker</code>&#x542F;&#x52A8;&#xFF1A; </p>
+<li><p>&#x542F;&#x52A8;<code>frp-client</code>&#xFF0C;&#x8FD9;&#x91CC;&#x901A;&#x8FC7;<code>docker</code>&#x542F;&#x52A8;&#xFF1A;</p>
 </li>
 </ol>
 <p><code>docker run --restart=always --network host -d -v /mnt/sda3/frpc/frpc.ini:/etc/frp/frpc.ini --name frpc snowdreamtech/frpc:latest</code></p>
@@ -572,48 +576,26 @@
 <h2 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h2>
 <h2 id="dashboard">Dashboard</h2>
 <p>&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x67E5;&#x770B; frp &#x7684;&#x72B6;&#x6001;&#x4EE5;&#x53CA;&#x4EE3;&#x7406;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x5C55;&#x793A;&#x3002;&#x9700;&#x8981;&#x5728;<code>frps.ini</code>&#x4E2D;&#x6307;&#x5B9A; dashboard &#x670D;&#x52A1;&#x4F7F;&#x7528;&#x7684;&#x7AEF;&#x53E3;&#xFF0C;&#x5373;&#x53EF;&#x5F00;&#x542F;&#x6B64;&#x529F;&#x80FD;&#xFF1A;</p>
-<pre><code>```
-# frps.ini
+<pre><code># frps.ini
 [common]
-bind_port = 7000
-vhost_http_port = 8080
-dashboard_port = 7500
-# dashboard &#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#xFF0C;&#x9ED8;&#x8BA4;&#x90FD;&#x4E3A; admin
-dashboard_user = admin
-dashboard_pwd = wang13462680535
-```
+bind_port = 7000 vhost_http_port = 8080 dashboard_port = 7500 # dashboard &#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#xFF0C;&#x9ED8;&#x8BA4;&#x90FD;&#x4E3A; admin dashboard_user = admin dashboard_pwd = wang13462680535
 </code></pre><h2 id="admin-ui">Admin UI</h2>
-<p><code>Admin UI</code>&#x80FD;&#x591F;&#x5E2E;&#x52A9;&#x666E;&#x901A;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x67E5;&#x770B;&#x548C;&#x7BA1;&#x7406;&#x5BA2;&#x6237;&#x7AEF;&#x4E0A;&#x7684;proxy&#x72B6;&#x6001;&#x548C;&#x914D;&#x7F6E;&#x3002; </p>
+<p><code>Admin UI</code>&#x80FD;&#x591F;&#x5E2E;&#x52A9;&#x666E;&#x901A;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x67E5;&#x770B;&#x548C;&#x7BA1;&#x7406;&#x5BA2;&#x6237;&#x7AEF;&#x4E0A;&#x7684;proxy&#x72B6;&#x6001;&#x548C;&#x914D;&#x7F6E;&#x3002;</p>
 <p>&#x9700;&#x8981;&#x5728;<code>frpc.ini</code>&#x4E2D;&#x6307;&#x5B9A;admin&#x670D;&#x52A1;&#x4F7F;&#x7528;&#x7684;&#x7AEF;&#x53E3;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x542F;&#x6B64;&#x529F;&#x80FD;&#x4E86;&#xFF1A;</p>
-<pre><code>```
-[common]
-admin_addr = 127.0.0.1
-admin_port = 7400
-admin_user = admin
-admin_pwd = admin
-```
-</code></pre><p>&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#x901A;&#x8FC7;<code>http://127.0.0.1:7400</code>&#x8BBF;&#x95EE;<code>Admin UI</code>&#xFF0C;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x9ED8;&#x8BA4;&#x4E3A;<code>admin</code>&#x3002; </p>
+<pre><code>[common]
+admin_addr = 127.0.0.1 admin_port = 7400 admin_user = admin admin_pwd = admin
+</code></pre><p>&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#x901A;&#x8FC7;<code>http://127.0.0.1:7400</code>&#x8BBF;&#x95EE;<code>Admin UI</code>&#xFF0C;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x9ED8;&#x8BA4;&#x4E3A;<code>admin</code>&#x3002;</p>
 <p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x5728;&#x5916;&#x7F51;&#x73AF;&#x5883;&#x8BBF;&#x95EE;<code>Admin UI</code>&#xFF0C;&#x5C06;<code>7400</code>&#x7AEF;&#x53E3;&#x6620;&#x5C04;&#x51FA;&#x53BB;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x901A;&#x8FC7;&#x4FEE;&#x6539;<code>frpc.ini</code>&#x5B8C;&#x6210;&#x6B64;&#x6620;&#x5C04;:</p>
-<pre><code>```
-[range:test_tcp]
-type = tcp
-local_ip = 127.0.0.1
-local_port = 7400
-remote_port = 7400
-```
+<pre><code>[range:test_tcp]
+type = tcp local_ip = 127.0.0.1 local_port = 7400 remote_port = 7400
 </code></pre><h2 id="&#x76D1;&#x63A7;">&#x76D1;&#x63A7;</h2>
 <h2 id="&#x5BA2;&#x6237;&#x7AEF;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;">&#x5BA2;&#x6237;&#x7AEF;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;</h2>
 <h2 id="&#x8303;&#x56F4;&#x7AEF;&#x53E3;&#x6620;&#x5C04;">&#x8303;&#x56F4;&#x7AEF;&#x53E3;&#x6620;&#x5C04;</h2>
 <p>&#x5728;frpc&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6620;&#x5C04;&#x591A;&#x4E2A;&#x7AEF;&#x53E3;&#xFF0C;&#x76EE;&#x524D;&#x4EC5;&#x652F;&#x6301;<code>tcp</code>&#x548C;<code>udp</code>&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
 <p>&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#x901A;&#x8FC7;<code>range:</code>&#x6BB5;&#x843D;&#x6807;&#x8BB0;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x89E3;&#x6790;&#x8FD9;&#x4E2A;&#x6807;&#x8BB0;&#x4E2D;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5C06;&#x5176;&#x62C6;&#x5206;&#x6210;&#x591A;&#x4E2A;proxy&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;proxy&#x4EE5;&#x6570;&#x5B57;&#x4E3A;&#x540E;&#x7F00;&#x547D;&#x540D;&#x3002;</p>
 <p>&#x4F8B;&#x5982;&#x8981;&#x6620;&#x5C04;&#x672C;&#x5730;6000-6005&#xFF0C;6007&#x8FD9;6&#x4E2A;&#x7AEF;&#x53E3;&#xFF0C;&#x4E3B;&#x8981;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code>```
-[range:test_tcp]
-type = tcp
-local_ip = 127.0.0.1
-local_port = 6000-6006,6007
-remote_port = 6000-6006,6007
-```
+<pre><code>[range:test_tcp]
+type = tcp local_ip = 127.0.0.1 local_port = 6000-6006,6007 remote_port = 6000-6006,6007
 </code></pre><p>&#x5B9E;&#x9645;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x540E;&#x4F1A;&#x521B;&#x5EFA;8&#x4E2A;proxy&#xFF0C;&#x547D;&#x540D;&#x4E3A;<code>test_tcp_0,test_tcp_1 &#xB7;&#xB7;&#xB7; test_tcp_7</code></p>
 <h2 id="&#x5BA2;&#x6237;&#x7AEF;&#x63D2;&#x4EF6;">&#x5BA2;&#x6237;&#x7AEF;&#x63D2;&#x4EF6;</h2>
 
@@ -659,7 +641,7 @@ remote_port = 6000-6006,6007
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.6. FRP内网穿透","level":"1.3.6","depth":2,"next":{"title":"2.7. Karaf简介","level":"1.3.7","depth":2,"path":"Linux/Kafka介绍.md","ref":"Linux/Kafka介绍.md","articles":[]},"previous":{"title":"2.5. Linux常用命令","level":"1.3.5","depth":2,"path":"Linux/Linux常用命令.md","ref":"Linux/Linux常用命令.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/frp内网穿透.md","mtime":"2020-12-29T07:40:16.166Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-23T05:46:46.977Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.6. FRP内网穿透","level":"1.3.6","depth":2,"next":{"title":"2.7. Karaf简介","level":"1.3.7","depth":2,"path":"Linux/Kafka介绍.md","ref":"Linux/Kafka介绍.md","articles":[]},"previous":{"title":"2.5. Linux常用命令","level":"1.3.5","depth":2,"path":"Linux/Linux常用命令.md","ref":"Linux/Linux常用命令.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/frp内网穿透.md","mtime":"2021-03-01T15:09:40.062Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-01T16:01:56.518Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -107,7 +107,7 @@
                 <a href="./">
             
                     
-                    1. python相关
+                    1. python
             
                 </a>
             
@@ -249,7 +249,7 @@
                 <a href="../Linux/">
             
                     
-                    2. Linux相关
+                    2. Linux
             
                 </a>
             
@@ -517,52 +517,68 @@
                                 
                                 <h1 id="&#x65E0;&#x7A77;&#x8FED;&#x4EE3;&#x5668;">&#x65E0;&#x7A77;&#x8FED;&#x4EE3;&#x5668;</h1>
 <ul>
-<li>count()<pre><code class="lang-python"><span class="hljs-keyword">from</span> itertools <span class="hljs-keyword">import</span> count
+<li>count()</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> itertools <span class="hljs-keyword">import</span> count
+
 <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x4ECE;10&#x5F00;&#x59CB;&#x95F4;&#x9694;&#x4E3A;2&#x7684;&#x503C;</span>
 <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> count(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>):
-  print(x)
+    print(x)
 </code></pre>
-</li>
+<ul>
 <li>cycle()&#x5FAA;&#x73AF;&#x8FD4;&#x56DE;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#xFF0C;<code>cycle(&apos;ABCD&apos;) --&gt; A B C D A B C D ...</code></li>
-<li>repeat()&#x91CD;&#x590D;&#x65E0;&#x9650;&#x6B21;&#x6216;n&#x6B21;&#xFF0C;<code>repeat(10, 3) --&gt; 10 10 10</code><h1 id="&#x5E38;&#x89C4;&#x8FED;&#x4EE3;&#x5668;">&#x5E38;&#x89C4;&#x8FED;&#x4EE3;&#x5668;</h1>
-</li>
+<li>repeat()&#x91CD;&#x590D;&#x65E0;&#x9650;&#x6B21;&#x6216;n&#x6B21;&#xFF0C;<code>repeat(10, 3) --&gt; 10 10 10</code></li>
+</ul>
+<h1 id="&#x5E38;&#x89C4;&#x8FED;&#x4EE3;&#x5668;">&#x5E38;&#x89C4;&#x8FED;&#x4EE3;&#x5668;</h1>
+<ul>
 <li>accumulate()&#x81EA;&#x52A8;&#x6C42;&#x548C;&#xFF0C;<code>accumulate([1,2,3,4,5]) --&gt; 1 3 6 10 15</code></li>
 <li>chain()&#x5B57;&#x7B26;&#x4E32;&#x62C6;&#x5206;&#xFF0C;<code>chain(&apos;ABC&apos;, &apos;DEF&apos;) --&gt; A B C D E F</code></li>
 <li>chain.from_iterable()&#x5B57;&#x7B26;&#x4E32;&#x62C6;&#x5206;&#xFF0C;<code>chain.from_iterable([&apos;123&apos;, &apos;25&apos;]) --&gt; 1 2 3 2 5</code></li>
 <li>compress()&#x538B;&#x7F29;&#xFF0C;<code>compress(&apos;ABCDEF&apos;, [1,0,1,0,1,1]) --&gt; A C E F</code></li>
 <li>dropwhile()&#x5220;&#x9664;&#x9996;&#x6B21;&#x4E0D;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x4E4B;&#x524D;&#x7684;&#x6570;&#x636E;&#xFF0C;<code>dropwhile(lambda x: x&lt;5, [1,4,6,4,1]) --&gt; 6 4 1</code></li>
 <li>filterfalse()&#x8FD4;&#x56DE;&#x5224;&#x65AD;&#x4E3A;&#x5047;&#x7684;&#x6570;&#x636E;&#xFF0C;<code>filterfalse(lambda x: x%2, range(10)) --&gt; 0 2 4 6 8</code></li>
-<li>groupby()&#x6839;&#x636E;&#x6761;&#x4EF6;&#x8FDB;&#x884C;&#x5206;&#x7EC4;<pre><code class="lang-python"><span class="hljs-keyword">from</span> itertools <span class="hljs-keyword">import</span> groupby
+<li>groupby()&#x6839;&#x636E;&#x6761;&#x4EF6;&#x8FDB;&#x884C;&#x5206;&#x7EC4;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> itertools <span class="hljs-keyword">import</span> groupby
+
 groups = []
 uniquekeys = []
 info = [(<span class="hljs-number">1</span>, <span class="hljs-string">&apos;&#x9ECE;&#x660E;&apos;</span>), (<span class="hljs-number">3</span>, <span class="hljs-string">&apos;&#x9648;&#x5C0F;&#x6625;&apos;</span>), (<span class="hljs-number">2</span>, <span class="hljs-string">&apos;&#x5218;&#x5FB7;&#x534E;&apos;</span>)]
 data = sorted(info, key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">0</span>])
 <span class="hljs-keyword">for</span> i, j <span class="hljs-keyword">in</span> groupby(data, <span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">0</span>] &gt; <span class="hljs-number">1</span>):
-  groups.append(list(j))
-  uniquekeys.append(i)
+    groups.append(list(j))
+    uniquekeys.append(i)
 print(groups)
 print(uniquekeys)
 </code></pre>
-</li>
+<ul>
 <li>islice()&#x5207;&#x7247;&#xFF0C;<code>islice(&apos;ABCDEFG&apos;, 2, None) --&gt; C D E F G</code></li>
-<li>starmap()&#x5C06;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;<pre><code>info = [(x, y) for x, y in zip(range(1, 10), range(11, 20))]
+<li>starmap()&#x5C06;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;</li>
+</ul>
+<pre><code>info = [(x, y) for x, y in zip(range(1, 10), range(11, 20))]
 print(list(starmap(lambda x, y: x * y, info)))
-</code></pre></li>
+</code></pre><ul>
 <li>takewhile()&#x53D6;&#x51FA;&#x6761;&#x4EF6;&#x4E3A;&#x771F;&#x7684;&#x6570;&#x636E;&#x5E76;&#x8FC7;&#x6EE4;,&#x5224;&#x65AD;&#x4E3A;false&#x65F6;&#x505C;&#x6B62;&#x53D6;&#x503C;&#xFF0C;<code>takewhile(lambda x: x &lt; 5, [1, 4, 6, 4&#xFF0C;3, 1]) --&gt; 1 4</code></li>
-<li>tee()&#x4ECE;&#x4E00;&#x4E2A;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x4E2D;&#x8FD4;&#x56DE;n&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;<pre><code class="lang-python"><span class="hljs-keyword">from</span> itertools <span class="hljs-keyword">import</span> tee
+<li>tee()&#x4ECE;&#x4E00;&#x4E2A;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x4E2D;&#x8FD4;&#x56DE;n&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> itertools <span class="hljs-keyword">import</span> tee
+
 info = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
 x, y, z = tee(info, <span class="hljs-number">3</span>)
 print(list(x))
 print(list(y))
 print(list(z))
 </code></pre>
-</li>
-<li>zip_longest()&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x6309;&#x987A;&#x5E8F;&#x7EC4;&#x5408;&#xFF0C;<code>zip_longest(&apos;ABCD&apos;, &apos;xy&apos;, fillvalue=&apos;-&apos;) --&gt; Ax By C- D-</code><h1 id="&#x6392;&#x5217;&#x7EC4;&#x5408;&#x8FED;&#x4EE3;&#x5668;">&#x6392;&#x5217;&#x7EC4;&#x5408;&#x8FED;&#x4EE3;&#x5668;</h1>
-</li>
+<ul>
+<li>zip_longest()&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x6309;&#x987A;&#x5E8F;&#x7EC4;&#x5408;&#xFF0C;<code>zip_longest(&apos;ABCD&apos;, &apos;xy&apos;, fillvalue=&apos;-&apos;) --&gt; Ax By C- D-</code></li>
+</ul>
+<h1 id="&#x6392;&#x5217;&#x7EC4;&#x5408;&#x8FED;&#x4EE3;&#x5668;">&#x6392;&#x5217;&#x7EC4;&#x5408;&#x8FED;&#x4EE3;&#x5668;</h1>
+<ul>
 <li>product()&#x7B1B;&#x5361;&#x5C14;&#x79EF;&#xFF0C;<code>product(&apos;AB&apos;, repeat=2) --&gt; AA AB BA BB</code></li>
 <li>permutations()&#x6392;&#x5217;&#x7EC4;&#x5408;&#x65E0;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;<code>permutations(&apos;AB&apos;, 2) --&gt; AB BA</code></li>
 <li>combinations()&#x6709;&#x5E8F;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x65E0;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;<code>combinations(&apos;ABCD&apos;, 2) --&gt; AB AC AD BC BD CD</code></li>
-<li>combinations_with_replacement()&#x6709;&#x5E8F;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x6709;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;<code>combinations_with_replacement(&apos;ABCD&apos;, 2) --&gt; AA AB AC AD BB BC BD CC CD DD</code></li>
+<li>combinations_with_replacement()
+&#x6709;&#x5E8F;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x6709;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;<code>combinations_with_replacement(&apos;ABCD&apos;, 2) --&gt; AA AB AC AD BB BC BD CC CD DD</code></li>
 </ul>
 
                                 
@@ -607,7 +623,7 @@ print(list(z))
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.2. 迭代器--itertools","level":"1.2.2","depth":2,"next":{"title":"1.3. 定时任务框架--apscheduler","level":"1.2.3","depth":2,"path":"Python/apscheduler.md","ref":"Python/apscheduler.md","articles":[]},"previous":{"title":"1.1.1. 内置函数","level":"1.2.1.1","depth":3,"path":"Python_Standard_Library/built_in_func.md","ref":"Python_Standard_Library/built_in_func.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/python迭代器--itertools.md","mtime":"2020-12-24T08:57:52.100Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-23T05:46:46.977Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.2. 迭代器--itertools","level":"1.2.2","depth":2,"next":{"title":"1.3. 定时任务框架--apscheduler","level":"1.2.3","depth":2,"path":"Python/apscheduler.md","ref":"Python/apscheduler.md","articles":[]},"previous":{"title":"1.1.1. 内置函数","level":"1.2.1.1","depth":3,"path":"Python_Standard_Library/built_in_func.md","ref":"Python_Standard_Library/built_in_func.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/python迭代器--itertools.md","mtime":"2021-03-01T15:09:41.041Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-01T16:01:56.518Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

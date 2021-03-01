@@ -1,8 +1,11 @@
 # 自动更新镜像工具--Watchtower
+
 Watchtower 监视运行容器并监视这些容器最初启动时的镜像有没有变动。当 Watchtower 检测到一个镜像已经有变动时，它会使用新镜像自动重新启动相应的容器。
 
 ## 快速开始
+
 只需要执行以下命令就可启动`watchtower`：
+
 ```shell
 docker run -d \
     --name watchtower \
@@ -11,6 +14,7 @@ docker run -d \
 ```
 
 ## 选项参数
+
 ```text
 $ docker run --rm containrrr/watchtower -h
 
@@ -75,7 +79,9 @@ Flags:
 ```
 
 ## 自动清除旧的镜像
+
 官方给出的默认启动命令在长期使用后会堆积非常多的标签为`none`的旧镜像，如果放任不管会占用大量的磁盘空间。要避免这种情况可以加入`--cleanup`或`-c` 选项，这样每次更新都会把旧的镜像清理掉。
+
 ```shell
 docker run -d \
     --name watchtower \
@@ -85,7 +91,9 @@ docker run -d \
 ```
 
 ## 选择性自动更新
+
 假设我们只想更新`nginx`、`redis`这两个容器，我们可以把容器名称追加到启动命令的最后面
+
 ```shell
 docker run -d \
     --name watchtower \
@@ -95,11 +103,17 @@ docker run -d \
 ```
 
 ## 设置单个容器自动更新特征
-给容器中添加`com.centurylinklabs.watchtower.enable`这个`LABEL`并设置它的值为`false`，或者在启动命令中加入`--label com.centurylinklabs.watchtower.enable=false`参数Watchtower 将永远忽略它的更新，即使它包含在自动更新列表中
+
+给容器中添加`com.centurylinklabs.watchtower.enable`这个`LABEL`并设置它的值为`false`
+，或者在启动命令中加入`--label com.centurylinklabs.watchtower.enable=false`参数Watchtower 将永远忽略它的更新，即使它包含在自动更新列表中
+
 ```text
 docker run -d --name ubuntu --restart always --label com.centurylinklabs.watchtower.enable=false ubuntu
 ```
-当容器启动命令中加入`--label com.centurylinklabs.watchtower.enable=true`参数，并且给`Watchtower`加上`--label-enable`选项时，`Watchtower`将只更新这些包含此参数的容器。
+
+当容器启动命令中加入`--label com.centurylinklabs.watchtower.enable=true`参数，并且给`Watchtower`加上`--label-enable`选项时，`Watchtower`
+将只更新这些包含此参数的容器。
+
 ```text
 docker run -d \
     --name watchtower \
@@ -108,6 +122,7 @@ docker run -d \
     containrrr/watchtower -c \
     --label-enable
 ```
+
 > `--label-enable`可以简写为`-e`：
 
 ```text
@@ -119,6 +134,7 @@ docker run -d \
 ```
 
 ## 设置自动更新检查频率
+
 默认情况下`Watchtower`每 5 分钟会轮询一次，如果你觉得这个频率太高了可以使用如下选项来控制更新检查的频率，但二者只能选择其一。
 
 - `--interval`或`-i`设置更新检测时间间隔，单位为秒。如每小时检查一次：

@@ -1,5 +1,7 @@
 # kubenetes简介
+
 Kubernetes 是谷歌开源的容器集群管理系统，是 Google 多年大规模容器管理技术 Borg 的开源版本，主要功能包括：
+
 - 基于容器的应用部署、维护和滚动升级
 - 负载均衡和服务发现
 - 跨机器和跨地区的集群调度
@@ -36,7 +38,7 @@ kubernetes发展非常迅速，已经成为容器编排领域的领导者。
 - 没有图形化运维管理工具
 
 > 因此我们需要一套容器编排工具！
-> 
+>
 > 基于Docker容器引擎的开源容器编排工具目前市场上主要有：
 > - docker-compose、docker swarm
 > - Mesosphere + Marathon
@@ -70,6 +72,7 @@ kubernetes发展非常迅速，已经成为容器编排领域的领导者。
     - Service/Ingress
 
 ## Pod
+
 - Pod是K8S中能够被运行的最小的逻辑单元（原子单元）
 - 1个Pod里边可以运行多个容器，它们共享UTS+NET+IPC名称空间
 - 可以把Pod理解为豌豆荚，而同一个Pod内的每一个容器是一颗颗的豌豆
@@ -129,7 +132,6 @@ kubernetes发展非常迅速，已经成为容器编排领域的领导者。
 - Ingress是K8S集群里工作在OSI网络参考模型下，第7层的应用，对外暴露的接口
 - Service只能进行L4流量调度，表现形式是ip+port
 - Ingress则可以调度不同业务域、不同URL访问路径的业务流量
-
 
 ## 核心组件
 
@@ -214,7 +216,6 @@ LB,ETCD|hdss7-12.host.com|10.4.7.12|2C|2G|Centos7|/data/ 50G|
 K8S Master,K8S Node,ETCD|hdss7-21.host.com|10.4.7.21|2C|2G|Centos7|/data/ 50G|
 K8S Master,K8S Node,ETCD|hdss7-22.host.com|10.4.7.22|2C|2G|Centos7|/data/ 50G|
 Harbr,NFS|hdss7-200.host.com|10.4.7.200|2C|2G|Centos7|/data/ 50G|
-
 
 ### 安装前准备
 

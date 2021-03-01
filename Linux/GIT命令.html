@@ -107,7 +107,7 @@
                 <a href="../Python/">
             
                     
-                    1. python相关
+                    1. python
             
                 </a>
             
@@ -249,7 +249,7 @@
                 <a href="./">
             
                     
-                    2. Linux相关
+                    2. Linux
             
                 </a>
             
@@ -518,16 +518,17 @@
                                 <h1 id="git-commit">git commit</h1>
 <h2 id="&#x64A4;&#x9500;&#x4E0A;&#x4E00;&#x6B21;&#x7684;commit&#x64CD;&#x4F5C;">&#x64A4;&#x9500;&#x4E0A;&#x4E00;&#x6B21;&#x7684;commit&#x64CD;&#x4F5C;</h2>
 <ul>
-<li>&#x4EC5;&#x5728;&#x672C;&#x5730;commit&#x8FD8;&#x672A;push<pre><code class="lang-shell">git reset --soft|--mixed|--hard &lt;commit_id&gt;
-</code></pre>
-&#x8FD9;&#x91CC;&#x7684;<commit_id>&#x5C31;&#x662F;&#x6BCF;&#x4E00;&#x6B21;commit&#x7684;SHA-1&#xFF0C;&#x53EF;&#x4EE5;&#x5728;log&#x4E2D;&#x67E5;&#x770B;</commit_id></li>
+<li>&#x4EC5;&#x5728;&#x672C;&#x5730;commit&#x8FD8;&#x672A;push</li>
 </ul>
+<pre><code class="lang-shell">git reset --soft|--mixed|--hard &lt;commit_id&gt;
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x7684;<commit_id>&#x5C31;&#x662F;&#x6BCF;&#x4E00;&#x6B21;commit&#x7684;SHA-1&#xFF0C;&#x53EF;&#x4EE5;&#x5728;log&#x4E2D;&#x67E5;&#x770B;</commit_id></p>
 <blockquote>
 <p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
 <ul>
 <li>--mixed &#x4F1A;&#x4FDD;&#x7559;&#x6E90;&#x7801;&#xFF0C;&#x53EA;&#x662F;&#x5C06;git commit&#x548C;index &#x4FE1;&#x606F;&#x56DE;&#x9000;&#x5230;&#x4E86;&#x67D0;&#x4E2A;&#x7248;&#x672C;</li>
 <li>--soft &#x4FDD;&#x7559;&#x6E90;&#x7801;,&#x53EA;&#x56DE;&#x9000;&#x5230;commit&#x4FE1;&#x606F;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;.&#x4E0D;&#x6D89;&#x53CA;index&#x7684;&#x56DE;&#x9000;,&#x5982;&#x679C;&#x8FD8;&#x9700;&#x8981;&#x63D0;&#x4EA4;,&#x76F4;&#x63A5;commit&#x5373;&#x53EF;</li>
-<li>--hard    &#x6E90;&#x7801;&#x4E5F;&#x4F1A;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;,commit&#x548C;index &#x90FD;&#x4F1A;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;.(&#x6CE8;&#x610F;,&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x6539;&#x53D8;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x4ED3;&#x5E93;&#x6E90;&#x7801;)</li>
+<li>--hard &#x6E90;&#x7801;&#x4E5F;&#x4F1A;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;,commit&#x548C;index &#x90FD;&#x4F1A;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;.(&#x6CE8;&#x610F;,&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x6539;&#x53D8;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x4ED3;&#x5E93;&#x6E90;&#x7801;)</li>
 </ul>
 </blockquote>
 <ul>
@@ -542,14 +543,16 @@
 </blockquote>
 <h1 id="git-config&#x547D;&#x4EE4;">git config&#x547D;&#x4EE4;</h1>
 <ul>
-<li>&#x67E5;&#x770B;git&#x914D;&#x7F6E;<blockquote>
+<li>&#x67E5;&#x770B;git&#x914D;&#x7F6E;</li>
+</ul>
+<blockquote>
 <p>git config --global --list</p>
 </blockquote>
-</li>
-</ul>
 <p><img src="../asset/linux/&#x67E5;&#x770B;git&#x914D;&#x7F6E;.png" alt="&#x67E5;&#x770B;&#x914D;&#x7F6E;"></p>
 <ul>
-<li>&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;&#x548C;&#x53D6;&#x6D88;&#x4EE3;&#x7406;<blockquote>
+<li>&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;&#x548C;&#x53D6;&#x6D88;&#x4EE3;&#x7406;</li>
+</ul>
+<blockquote>
 <ul>
 <li>git config --global http.proxy <a href="http://127.0.0.1:1080" target="_blank">http://127.0.0.1:1080</a></li>
 <li>git config --global http.proxy &apos;socks5://127.0.0.1:1080&apos;</li>
@@ -557,31 +560,37 @@
 <li>git config --global --unset http.proxy</li>
 </ul>
 </blockquote>
-</li>
-</ul>
 <h1 id="git-tag&#x64CD;&#x4F5C;">git tag&#x64CD;&#x4F5C;</h1>
 <ul>
-<li>&#x65B0;&#x5EFA;tag<blockquote>
+<li>&#x65B0;&#x5EFA;tag</li>
+</ul>
+<blockquote>
 <p>git tag -a <tag_name> -m <tag_desc></tag_desc></tag_name></p>
 </blockquote>
-</li>
-<li>&#x5220;&#x9664;tag<blockquote>
+<ul>
+<li>&#x5220;&#x9664;tag</li>
+</ul>
+<blockquote>
 <p>git tag -d <tag_name></tag_name></p>
 </blockquote>
-</li>
-<li>&#x63A8;&#x9001;tag&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;<blockquote>
+<ul>
+<li>&#x63A8;&#x9001;tag&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</li>
+</ul>
+<blockquote>
 <p>git push --tags</p>
 </blockquote>
-</li>
-<li>&#x67E5;&#x770B;&#x672C;&#x5730;tag<blockquote>
+<ul>
+<li>&#x67E5;&#x770B;&#x672C;&#x5730;tag</li>
+</ul>
+<blockquote>
 <p>git tag -ln</p>
 </blockquote>
-</li>
-<li>&#x83B7;&#x53D6;&#x6307;&#x5B9A;tag&#x7684;&#x4EE3;&#x7801;<blockquote>
+<ul>
+<li>&#x83B7;&#x53D6;&#x6307;&#x5B9A;tag&#x7684;&#x4EE3;&#x7801;</li>
+</ul>
+<blockquote>
 <p>git checkout <tag_name></tag_name></p>
 </blockquote>
-</li>
-</ul>
 
                                 
                                 </section>
@@ -625,7 +634,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3. Git命令","level":"1.3.3","depth":2,"next":{"title":"2.4. Mininet学习","level":"1.3.4","depth":2,"path":"Linux/mininet.md","ref":"Linux/mininet.md","articles":[]},"previous":{"title":"2.2. 通过VNC访问Ubuntu远程桌面","level":"1.3.2","depth":2,"path":"Linux/通过VNC访问Ubuntu远程桌面.md","ref":"Linux/通过VNC访问Ubuntu远程桌面.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/GIT命令.md","mtime":"2021-02-09T02:15:54.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-23T05:46:46.977Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3. Git命令","level":"1.3.3","depth":2,"next":{"title":"2.4. Mininet学习","level":"1.3.4","depth":2,"path":"Linux/mininet.md","ref":"Linux/mininet.md","articles":[]},"previous":{"title":"2.2. 通过VNC访问Ubuntu远程桌面","level":"1.3.2","depth":2,"path":"Linux/通过VNC访问Ubuntu远程桌面.md","ref":"Linux/通过VNC访问Ubuntu远程桌面.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/GIT命令.md","mtime":"2021-03-01T15:09:41.030Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-01T16:01:56.518Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
