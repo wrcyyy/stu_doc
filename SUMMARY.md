@@ -2,7 +2,7 @@
 
 * [介绍](README.md)
   
-* [1. python相关](Python/README.md)
+* [1. python](Python/README.md)
   * [1.1. python标准库学习](Python_Standard_Library/README.md)
     * [1.1.1. 内置函数](Python_Standard_Library/built_in_func.md)
   * [1.2. 迭代器--itertools](Python/python迭代器--itertools.md)
@@ -12,7 +12,7 @@
   * [1.6. python代码优化指南](Python/python代码机构梳理.md)
   * [1.7. pytest学习](Python/pytest学习.md)
   * [1.8. allure-自动化测试报告框架](Python/allure报告框架.md)
-* [2. Linux相关](Linux/README.md)
+* [2. Linux](Linux/README.md)
   * [2.1. vim操作及快捷键](Linux/VIM操作及快捷键.md)
   * [2.2. 通过VNC访问Ubuntu远程桌面](Linux/通过VNC访问Ubuntu远程桌面.md)
   * [2.3. Git命令](Linux/GIT命令.md)
@@ -27,5 +27,6 @@
   * [3.3. Docker镜像相关](Docker/docker镜像制作.md)
   * [3.4. Docker镜像自动更新](Docker/docker镜像更新.md)
   * [3.5. Kubernetes学习](Docker/kubernetes学习.md)
+  
 * [4. 软件测试](ST_DOC/README.md)
   * [4.1. 软件测试面试题目](ST_DOC/question.md)
