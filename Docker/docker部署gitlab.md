@@ -1,5 +1,7 @@
 # 简介
+
 # 部署安装
+
 * 设置环境变量`export GITLAB_HOME=/srv/gitlab`
 * 创建`docker-compose.yml`文件：
     ```yaml
@@ -22,8 +24,9 @@
         - '$GITLAB_HOME/logs:/var/log/gitlab'
         - '$GITLAB_HOME/data:/var/opt/gitlab'
     ```
+
 - 启动容器`docker-compose up -d`
 
 # 配置
-* 语言切换
-在`Settings->Preferences->Localization`进行语言切换
+
+* 语言切换 在`Settings->Preferences->Localization`进行语言切换

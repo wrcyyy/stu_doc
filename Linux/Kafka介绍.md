@@ -1,4 +1,5 @@
 # Kafka是什么
+
 Kafka是一个分布式的流处理平台
 
 Kafka最早是由LinkedIn公司开发，作为其自身业务消息处理的基础；后LinkedIn公司将Kafka捐赠给Apache，现在已经成为Apache的一个顶级项目了。Kafka作为一个高吞吐的分布式的消息系统，目前已经被很多公司应用在实际业务中了，并且与许多数据处理框架相结合，比如Hadoop、Spark等。
@@ -39,8 +40,10 @@ Partition是物理上的概念，每个Topic包含一个或者多个Partition
 可以简单理解为一个Kafka节点，多个Broker节点构成整个Kafka集群
 
 ## Topics/Log && Partition
+
 ![kafka_broker_topic](../asset/linux/kafka-brokers.jpeg)
 ![kafka_topic](../asset/linux/kafka_topic.jpeg)
+
 - 一个Topic可以认为是一类消息，每个Topic将被分成多个Partition，每个Partition在存储层面是append log文件。
 - 任何发布到此Partition的消息都会被直接追加到log文件的尾部，每条消息在文件中的位置称为offset（偏移量）
 - Logs文件根据Broker中的配置要求，保留一段时间后删除来释放磁盘空间
@@ -49,6 +52,7 @@ Partition是物理上的概念，每个Topic包含一个或者多个Partition
 - 越多的Partitions意味着可以容纳更多的Consumer，能够有效提升并发消费的能力
 
 ## Consumer && Producers && Consumer Group
+
 ![kafka_consumer](../asset/linux/kafka_consumer.jpeg)
 
 > Producer(消息和数据的产生者，发布消息给一个或者多个Topic)
@@ -81,7 +85,9 @@ Partition是物理上的概念，每个Topic包含一个或者多个Partition
 - 消息订阅者可以rewind back到任意位置重新进行消费，当订阅者故障时，可以选择最小的offset进行重新读取消费信息
 
 # Kafka服务搭建及使用
+
 ## 服务搭建
+
 这里简单介绍一下单个Broker的Kafka服务搭建
 
 > 创建docker-compose.yml文件
@@ -107,6 +113,7 @@ services:
 > 使用`docker-compose up -d`启动容器
 
 ## 简单上手
+
 资源创建需要在容器控制台进行
 
 > 创建Topic
@@ -125,6 +132,7 @@ services:
 > 创建Consumer
 
 `bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning`
+
 - --from-beginning用于从分区起始位置读取数据
 
 Producer发送数据后，Consumer就能立即收到相同的数据了
