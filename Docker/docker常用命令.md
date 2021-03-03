@@ -1,14 +1,17 @@
-# 容器生命周期管理
+# 目录
 
-- [run](#docker-run)
-- [start/stop/restart](#docker-stop)
-- [kill](#1-1)
-- [rm](#1-1)
-- [pause/unpause](#1-1)
-- [create](#1-1)
-- [exec](#1-1)
+1. [容器生命周期管理](#1-1)
+    - [run](#docker-run)
+    - [start/stop/restart](#docker-stop)
+    - [kill](#docker-kill)
+    - [rm](#docker-rm)
+    - [pause/unpause](#docker-pause)
+    - [create](#docker-create)
+    - [exec](#docker-exec)
 
-## <h2 id='docker-run'>docker run命令</h2>
+# <a id='1-1'>容器生命周期管理</a>
+
+## <a id='docker-run'>docker run命令</a>
 
 docker run 用于启动一个新的容器并执行指定命令
 > docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
@@ -33,7 +36,7 @@ docker run 用于启动一个新的容器并执行指定命令
 - --expose=[]：开放一个端口或者一组端口
 - --volume或-v：绑定一个卷
 
-## <h2 id='docker-stop'>docker start/stop/restart命令</h2>
+## <a id='docker-stop'>docker start/stop/restart命令</a>
 
 docker start：启动一个或多个停止状态的容器
 
@@ -43,7 +46,90 @@ docker restart：容器一个或多个容器
 
 启动已被停止的容器（可使用容器ID或者容器名）:
 > docker start 4653730a7c33
+>
 > docker start alpine
+
+## <a id='docker-kill'>docker kill命令</a>
+
+docker kill：杀掉一个运行中的容器
+
+参数说明：
+
+- -s: 向容器发送一个信号，默认值为KILL
+
+> 以下两条命令等效
+>
+> docker kill -s KILL mycontainer
+>
+> docker kill mycontainer
+
+## <a id='docker-rm'>docker rm命令</a>
+
+docker rm：删除一个或者多个容器
+
+> docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+参数说明：
+
+- -f：通过SIGKILL信号强制删除一个运行中的容器
+- -l：移除容器中的网络连接
+- -v：删除与容器相关联的卷
+
+```shell
+# 强制删除容器db01和db02
+docker rm -f db01 db02
+# 移除容器 nginx01 对容器 db01 的连接，连接名 db
+docker rm -l db 
+# 删除容器db01并删除挂载的数据卷
+docker rm -v db01
+# 删除所有已经停止的容器
+docker rm $(docker ps -aq)
+```
+
+## <a id='docker-pause'>docker pause|unpause命令</a>
+
+docker pause：暂停容器中的所有进程
+
+docker unpause：恢复容器中的所有进程
+
+> docker pause CONTAINER [CONTAINER...]
+>
+> docker unpause CONTAINER [CONTAINER...]
+
+暂停数据库容器db01提供服务：
+> docker pause db01
+
+恢复数据库容器db01提供服务：
+> docker unpause db01
+
+## <a id='docker-create'>docker create命令</a>
+
+docker create：创建一个容器但是不启动
+
+> docker create [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+使用alpine:latest镜像创建一个容器，并将容器命名为test_container
+> docker create --name test_container alpine:latest
+
+## <a id='docker-exec'>docker exec命令</a>
+
+docker exec：在运行中的容器中执行命令
+
+> docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+参数说明：
+
+- -d：分离模式：在后台运行
+- -i：即使没有附加也保持STDIN打开
+- -t：分配一个伪装器
+
+在容器 mynginx 中以交互模式执行容器内 /root/runoob.sh 脚本:
+
+> docker exec -it mynginx /bin/sh /root/runoob.sh
+
+在容器 mynginx 中开启一个交互模式的终端:
+
+> docker exec -it  mynginx /bin/bash
 
 # 容器操作
 

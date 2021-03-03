@@ -515,17 +515,21 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5BB9;&#x5668;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;">&#x5BB9;&#x5668;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;</h1>
-<ul>
+                                <h1 id="&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</h1>
+<ol>
+<li><a href="#1-1">&#x5BB9;&#x5668;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;</a><ul>
 <li><a href="#docker-run">run</a></li>
 <li><a href="#docker-stop">start/stop/restart</a></li>
-<li><a href="#1-1">kill</a></li>
-<li><a href="#1-1">rm</a></li>
-<li><a href="#1-1">pause/unpause</a></li>
-<li><a href="#1-1">create</a></li>
-<li><a href="#1-1">exec</a></li>
+<li><a href="#docker-kill">kill</a></li>
+<li><a href="#docker-rm">rm</a></li>
+<li><a href="#docker-pause">pause/unpause</a></li>
+<li><a href="#docker-create">create</a></li>
+<li><a href="#docker-exec">exec</a></li>
 </ul>
-<h2 id="docker-run&#x547D;&#x4EE4;"><h2 id="docker-run">docker run&#x547D;&#x4EE4;</h2></h2>
+</li>
+</ol>
+<h1 id="&#x5BB9;&#x5668;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;"><a id="1-1">&#x5BB9;&#x5668;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;</a></h1>
+<h2 id="docker-run&#x547D;&#x4EE4;"><a id="docker-run">docker run&#x547D;&#x4EE4;</a></h2>
 <p>docker run &#x7528;&#x4E8E;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BB9;&#x5668;&#x5E76;&#x6267;&#x884C;&#x6307;&#x5B9A;&#x547D;&#x4EE4;</p>
 <blockquote>
 <p>docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</p>
@@ -550,14 +554,88 @@
 <li>--expose=[]&#xFF1A;&#x5F00;&#x653E;&#x4E00;&#x4E2A;&#x7AEF;&#x53E3;&#x6216;&#x8005;&#x4E00;&#x7EC4;&#x7AEF;&#x53E3;</li>
 <li>--volume&#x6216;-v&#xFF1A;&#x7ED1;&#x5B9A;&#x4E00;&#x4E2A;&#x5377;</li>
 </ul>
-<h2 id="docker-startstoprestart&#x547D;&#x4EE4;"><h2 id="docker-stop">docker start/stop/restart&#x547D;&#x4EE4;</h2></h2>
+<h2 id="docker-startstoprestart&#x547D;&#x4EE4;"><a id="docker-stop">docker start/stop/restart&#x547D;&#x4EE4;</a></h2>
 <p>docker start&#xFF1A;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x505C;&#x6B62;&#x72B6;&#x6001;&#x7684;&#x5BB9;&#x5668;</p>
 <p>docker stop&#xFF1A;&#x505C;&#x6B62;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x5BB9;&#x5668;</p>
 <p>docker restart&#xFF1A;&#x5BB9;&#x5668;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5BB9;&#x5668;</p>
 <p>&#x542F;&#x52A8;&#x5DF2;&#x88AB;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;&#xFF08;&#x53EF;&#x4F7F;&#x7528;&#x5BB9;&#x5668;ID&#x6216;&#x8005;&#x5BB9;&#x5668;&#x540D;&#xFF09;:</p>
 <blockquote>
-<p>docker start 4653730a7c33
-docker start alpine</p>
+<p>docker start 4653730a7c33</p>
+<p>docker start alpine</p>
+</blockquote>
+<h2 id="docker-kill&#x547D;&#x4EE4;"><a id="docker-kill">docker kill&#x547D;&#x4EE4;</a></h2>
+<p>docker kill&#xFF1A;&#x6740;&#x6389;&#x4E00;&#x4E2A;&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x5BB9;&#x5668;</p>
+<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>-s: &#x5411;&#x5BB9;&#x5668;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x4FE1;&#x53F7;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;KILL</li>
+</ul>
+<blockquote>
+<p>&#x4EE5;&#x4E0B;&#x4E24;&#x6761;&#x547D;&#x4EE4;&#x7B49;&#x6548;</p>
+<p>docker kill -s KILL mycontainer</p>
+<p>docker kill mycontainer</p>
+</blockquote>
+<h2 id="docker-rm&#x547D;&#x4EE4;"><a id="docker-rm">docker rm&#x547D;&#x4EE4;</a></h2>
+<p>docker rm&#xFF1A;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x5BB9;&#x5668;</p>
+<blockquote>
+<p>docker rm [OPTIONS] CONTAINER [CONTAINER...]</p>
+</blockquote>
+<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>-f&#xFF1A;&#x901A;&#x8FC7;SIGKILL&#x4FE1;&#x53F7;&#x5F3A;&#x5236;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x5BB9;&#x5668;</li>
+<li>-l&#xFF1A;&#x79FB;&#x9664;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;</li>
+<li>-v&#xFF1A;&#x5220;&#x9664;&#x4E0E;&#x5BB9;&#x5668;&#x76F8;&#x5173;&#x8054;&#x7684;&#x5377;</li>
+</ul>
+<pre><code class="lang-shell"># &#x5F3A;&#x5236;&#x5220;&#x9664;&#x5BB9;&#x5668;db01&#x548C;db02
+docker rm -f db01 db02
+# &#x79FB;&#x9664;&#x5BB9;&#x5668; nginx01 &#x5BF9;&#x5BB9;&#x5668; db01 &#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x8FDE;&#x63A5;&#x540D; db
+docker rm -l db 
+# &#x5220;&#x9664;&#x5BB9;&#x5668;db01&#x5E76;&#x5220;&#x9664;&#x6302;&#x8F7D;&#x7684;&#x6570;&#x636E;&#x5377;
+docker rm -v db01
+# &#x5220;&#x9664;&#x6240;&#x6709;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;
+docker rm $(docker ps -aq)
+</code></pre>
+<h2 id="docker-pauseunpause&#x547D;&#x4EE4;"><a id="docker-pause">docker pause|unpause&#x547D;&#x4EE4;</a></h2>
+<p>docker pause&#xFF1A;&#x6682;&#x505C;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x8FDB;&#x7A0B;</p>
+<p>docker unpause&#xFF1A;&#x6062;&#x590D;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x8FDB;&#x7A0B;</p>
+<blockquote>
+<p>docker pause CONTAINER [CONTAINER...]</p>
+<p>docker unpause CONTAINER [CONTAINER...]</p>
+</blockquote>
+<p>&#x6682;&#x505C;&#x6570;&#x636E;&#x5E93;&#x5BB9;&#x5668;db01&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF1A;</p>
+<blockquote>
+<p>docker pause db01</p>
+</blockquote>
+<p>&#x6062;&#x590D;&#x6570;&#x636E;&#x5E93;&#x5BB9;&#x5668;db01&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF1A;</p>
+<blockquote>
+<p>docker unpause db01</p>
+</blockquote>
+<h2 id="docker-create&#x547D;&#x4EE4;"><a id="docker-create">docker create&#x547D;&#x4EE4;</a></h2>
+<p>docker create&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x4F46;&#x662F;&#x4E0D;&#x542F;&#x52A8;</p>
+<blockquote>
+<p>docker create [OPTIONS] IMAGE [COMMAND] [ARG...]</p>
+</blockquote>
+<p>&#x4F7F;&#x7528;alpine:latest&#x955C;&#x50CF;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#xFF0C;&#x5E76;&#x5C06;&#x5BB9;&#x5668;&#x547D;&#x540D;&#x4E3A;test_container</p>
+<blockquote>
+<p>docker create --name test_container alpine:latest</p>
+</blockquote>
+<h2 id="docker-exec&#x547D;&#x4EE4;"><a id="docker-exec">docker exec&#x547D;&#x4EE4;</a></h2>
+<p>docker exec&#xFF1A;&#x5728;&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x5BB9;&#x5668;&#x4E2D;&#x6267;&#x884C;&#x547D;&#x4EE4;</p>
+<blockquote>
+<p>docker exec [OPTIONS] CONTAINER COMMAND [ARG...]</p>
+</blockquote>
+<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>-d&#xFF1A;&#x5206;&#x79BB;&#x6A21;&#x5F0F;&#xFF1A;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;</li>
+<li>-i&#xFF1A;&#x5373;&#x4F7F;&#x6CA1;&#x6709;&#x9644;&#x52A0;&#x4E5F;&#x4FDD;&#x6301;STDIN&#x6253;&#x5F00;</li>
+<li>-t&#xFF1A;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x4F2A;&#x88C5;&#x5668;</li>
+</ul>
+<p>&#x5728;&#x5BB9;&#x5668; mynginx &#x4E2D;&#x4EE5;&#x4EA4;&#x4E92;&#x6A21;&#x5F0F;&#x6267;&#x884C;&#x5BB9;&#x5668;&#x5185; /root/runoob.sh &#x811A;&#x672C;:</p>
+<blockquote>
+<p>docker exec -it mynginx /bin/sh /root/runoob.sh</p>
+</blockquote>
+<p>&#x5728;&#x5BB9;&#x5668; mynginx &#x4E2D;&#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x4EA4;&#x4E92;&#x6A21;&#x5F0F;&#x7684;&#x7EC8;&#x7AEF;:</p>
+<blockquote>
+<p>docker exec -it  mynginx /bin/bash</p>
 </blockquote>
 <h1 id="&#x5BB9;&#x5668;&#x64CD;&#x4F5C;">&#x5BB9;&#x5668;&#x64CD;&#x4F5C;</h1>
 <h1 id="&#x5BB9;&#x5668;rootfs&#x547D;&#x4EE4;">&#x5BB9;&#x5668;rootfs&#x547D;&#x4EE4;</h1>
@@ -730,7 +808,7 @@ docker start alpine</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2. Docker常用命令","level":"1.4.2","depth":2,"next":{"title":"3.3. Docker镜像相关","level":"1.4.3","depth":2,"path":"Docker/docker镜像制作.md","ref":"Docker/docker镜像制作.md","articles":[]},"previous":{"title":"3.1. Docker安装及配置","level":"1.4.1","depth":2,"path":"Docker/docker安装&配置.md","ref":"Docker/docker安装&配置.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Docker/docker常用命令.md","mtime":"2021-03-03T03:01:52.956Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-03T10:01:14.665Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2. Docker常用命令","level":"1.4.2","depth":2,"next":{"title":"3.3. Docker镜像相关","level":"1.4.3","depth":2,"path":"Docker/docker镜像制作.md","ref":"Docker/docker镜像制作.md","articles":[]},"previous":{"title":"3.1. Docker安装及配置","level":"1.4.1","depth":2,"path":"Docker/docker安装&配置.md","ref":"Docker/docker安装&配置.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Docker/docker常用命令.md","mtime":"2021-03-03T14:25:10.373Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-03T14:25:38.709Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
