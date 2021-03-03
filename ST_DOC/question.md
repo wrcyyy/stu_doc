@@ -10,29 +10,13 @@
 1. [自动化测试问题](#automation_questions)
 1. [性能测试问题](#perf_questions)
 1. [数据库问题](#database_questions)
+    - [Mysql](#mysql)
 1. [操作系统问题](#os_questions)
-1. [算法问题](#algorithm)
+1. [python面试题](#python_questions)
+    - [IPV4地址校验](#valid_ipv4_address)
+    - [IPV6地址校验](#valid_ipv6_address)
 
-    * [数据结构](#algorithm_datastructure)
-    * [排序](#algorithm_sort)
-    * [其它](#algorithm_other)
-
-1. [Java面试题](#java)
-
-    * [基础知识](#java_basic)
-    * [JVM](#java_jvm)
-    * [并发编程](#java_thread)
-    * [JDBC](#java_jdbc)
-    * [Servlet&JSP](#java)
-
-1. [Spring](#spring)
-
-    * [Spring MVC](#spring_mvc)
-    * [Srping Boot](#spring_boot)
-
-1. [Mybatis](#mybatis)
-
-## <a name="general_questions">常见问题</a>
+## <a id="general_questions">常见问题</a>
 
 * 软件测试的目的是什么？
 
@@ -148,7 +132,7 @@
 > 2. 尝试从网上找类似的项目文档，如果幸运，可以从公司的资料库找到类似的文档
 > 3. 按照开发的接口或者设计文档，按照功能模块划分，大致写一些用例，然后进行摸索测试，在测试过程中逐渐完善自己的用例
 
-## <a name="testcase_questions">测试用例设计问题<a>
+## <a id="testcase_questions">测试用例设计问题<a>
 
 * 测试用例是什么？如何设计有效的测试用例？
 
@@ -169,7 +153,7 @@
 
 * 针对网上购物中订单提交的过程，设计测试用例
 
-## <a name="manage_questions">测试管理问题<a>
+## <a id="manage_questions">测试管理问题<a>
 
 * 你认为测试经理的工作职责和内容是什么？
 
@@ -188,7 +172,7 @@
 * 列举你曾经做过的测试(你认为有技术含量的或者提高了测试管理能力的),并说下你从中如何受益？
 * 在开发和测试存在不合作甚至对立的情况下，你如何平衡和协调工作？
 
-## <a name="automation_questions">自动化测试问题</a>
+## <a id="automation_questions">自动化测试问题</a>
 
 * 你认为适合做自动化测试的标准是什么?
 * 你认为什么类型的测试不适合做自动化测试?
@@ -203,7 +187,7 @@
 * 你是否熟悉Selenium工具?说一下它是什么?
 * 你是否还熟悉其它的自动化测试工具?各自简单的介绍一下?
 
-## <a name="perf_questions">性能测试问题</a>
+## <a id="perf_questions">性能测试问题</a>
 
 * 什么是性能测试?为什么要进行性能测试?
 * 性能测试的类型有哪些?
@@ -217,70 +201,70 @@
 * 性能测试中吞吐量是什么?
 * 解释下什么是耐力测试和尖峰测试?
 
-## <a name="database_questions">[数据库问题](#toc)</a>
+## <a id="database_questions">数据库问题</a>
 
-### MySql
+### <a id="mysql">Mysql</a>
 
 * 一张表,里面有ID自增主键,当insert了17条记录之后,删除了第15,16,17条记录,再把Mysql重启,再insert一条记录,这条记录的ID是18还是15
 
-## <a name="os_questions">操作系统问题</a>
+* 内联查询
+
+> 分别检索员工信息表的员工编号、员工姓名和部门信息表中的部门名称
+
+员工信息表(EmployeeTB)
+
+employeeid | employeename | deptid
+---|--- | ---
+0001 | 张三 | 01
+0002 | 李四 | 02
+0003 | 王五 | 02
+0004 | 赵六 | 01
+0005 | 郑七 | 03
+
+部门信息表(DeptTB )
+deptid | deptname ---|--- 01 | 产品部 02 | 研发部 03 | 测试部
+
+```sql
+SELECT e.employeeid,e.employeename,d.deptname FROM EmployeeTB AS e,DeptTB AS d WHERE e.deptid=d.deptid 
+
+SELECT e.employeeid,e.employeename,d.deptname FROM EmployeeTB AS e INNER JOIN DeptTB AS d ON e.deptid=d.deptid
+
+```
+
+## <a id="os_questions">操作系统问题</a>
 
 * 列出超过10个Linux常用的命令以及其作用?
 * 进程和线程是什么?它们有什么区别和联系?
 
-## <a name="algorithm_questions">算法问题</a>
+## <a id="python_questions">python面试题</a>
 
-## <a name="java_questions">Java面试题</a>
+### <a id="valid_ipv4_address">IPV4地址校验</a>
 
-### 基础知识
+```python
+def valid_ip_address(ip: str):
+    if '.' in ip:
+        ipv4 = ip.split('.')
+        if len(ipv4) != 4:
+            return False
+        for num in ipv4:
+            if (len(num) > 1 and num[0] == '0') or not num.isdigit() or int(num) < 0 or int(num) > 255:
+                return False
+        return True
+    return False
 
-* 面向对象编程有哪些特性?
+```
 
-> 1. 抽象
-> 2. 继承 继承是使用已存在的类作为基础--建立新类的技术，新类的定义可以增加新的数据或新的功能，也可以用父类的功能，但不能选择性地继承父类。通过使用继承我们能够非常方便地复用以前的代码，能够大大的提高开发的效率
->> 1. 子类拥有父类非private的属性和方法。
->> 2. 子类可以拥有自己属性和方法，即子类可以对父类进行扩展。
->> 3. 子类可以用自己的方式实现父类的方法 学习继承一定少不了这三个东西：构造器、protected关键字、向上转型
-> 3. 封装(把数据和逻辑封装在类里，通过创建对象去访问这个类里的方法和属性，封装把一个对象的属性私有化，同时提供一些可以被外界访问的属性的方法，作用：可以更改好的保护类的内部成员，)
-> 4. 多态性
->> 1. 依赖继承，重写方法
->> 2. 同一行为具有不同的实现，通过继承父类，在子类中进行方法的实现
->> 3. 通过创建不同子类的对象，去调用不同的方法
-> 5. 抽象的方法，一定是方法没有方法体的，如：abstract void  work()，一定是没有花括号的
+### <a id="valid_ipv6_address">IPV6地址校验</a>
 
-* 重写和重载的区别是什么？为什么重载不能根据返回值判断？
-
-> + 重写 @Override（不同类），用于子类继承父类，在子类去重写方法，对父类进行扩充或改造
-    > ps：父类的方法只有是public或者protected的，子类才能重写方法，其他的如父类是私有或者default，子类都是不可见的，所以不能重写方法 子类的方法名，参数，返回值都跟父类相同，重写的方法修饰符大于等于父类的方法
-> + 重载，同一个类中，存在相同的方法名，但是方法的参数一定不同
-
-* 为什么重载不能根据返回值判断？
-
-> 因为如果根据返回值判断，那么编译器编译的时候，如果参数相同，就不知道调用哪个方法了
-
-* 访问修饰符public,private，protected以及默认之间的区别
-
-> 类的成员不写访问修饰时默认为default。默认对于同一个包中的其他类相当于公开（public），对于不是同一个包中的其他类相当于私有（private）。受保护（protected）对子类相当于公开，对不是同一包中的没有父子关系的类相当于私有。 Java中，外部类的修饰符只能是public或默认
-
-* 抽象类和接口的异同？
-* Java中的异常有哪几类？分别怎么使用？
-* 常用的集合类有哪些以及各自有什么特点?
-* ArrayList和LinkedList内部的实现大致是怎样的？他们之间的区别和优缺点？
-* 内存溢出是怎么回事？请举几个可能出现内存溢出的场景？
-* ==和equals的区别？
-* hashCode方法的作用是什么？
-* HashMap实现原理，如何保证HashMap的线程安全？
-* Java中一个字符占多少个字节，扩展再问int, long, double占多少字节
-* 创建一个类的实例都有哪些办法？
-* final/finally/finalize的区别？
-* String/StringBuffer/StringBuilder的区别?
-* 什么是java序列化，如何实现java序列化?
-
-### JVM
-
-* JVM内存结构，为什么需要GC？
-* JVM堆的基本结构
-* JVM的垃圾算法有哪几种？CMS垃圾回收的基本流程？
-* JVM有哪些常用启动参数可以调整，描述几个？
-* 如何查看JVM的内存使用情况？
-* 你常用的JVM配置和调优参数都有哪些？分别什么作用？
+```python
+def valid_ipv6_address(ip: str):
+    if ':' in ip:
+        ipv6 = ip.split(':')
+        if len(ipv6) != 8:
+            return False
+        for num in ipv6:
+            if not num or len(num) > 4 or not all(map(lambda x: x.lower() in "0123456789abcdef", num)):
+                return False
+        return True
+    return False
+```
