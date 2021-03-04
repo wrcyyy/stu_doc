@@ -16,6 +16,9 @@
     - [IPV4地址校验](#valid_ipv4_address)
     - [IPV6地址校验](#valid_ipv6_address)
 
+1. [前端面试题](#web_question)
+    - [前端缓存策略](#cache_policy)
+
 ## <a id="general_questions">常见问题</a>
 
 * 软件测试的目的是什么？
@@ -268,3 +271,31 @@ def valid_ipv6_address(ip: str):
         return True
     return False
 ```
+
+## <a id="web_question">前端面试题</a>
+
+### <a id='cache_policy'>前端缓存策略</a>
+
+前端缓存可以减少延迟，缓存的文件可以给反复利用从而减少服务器的压力。
+
+按照策略划分，前端缓存主要分为`http缓存`和`浏览器缓存`
+
+> http缓存
+
+http缓存又分为`强缓存`和`协议缓存`，区别在于是否发送请求到服务器；前者不发送请求到服务器，而后者反之。
+
+> 浏览器缓存
+
+浏览器缓存分为`小容量缓存`和`大容量缓存`
+
+小容量缓存分为：
+
+- cookie
+- localStorage
+- sessionStorage
+
+大容量缓存分为：
+
+- webSql（关系型数据库）
+- IndexDB（非关系型数据库）
+
