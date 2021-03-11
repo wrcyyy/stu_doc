@@ -41,6 +41,10 @@ revert 之后你的本地代码会回滚到指定的历史版本,这时你再 gi
 > - git config --global http.proxy 'socks5h://127.0.0.1:1080'
 > - git config --global --unset http.proxy
 
+* 指定网址进行代理
+
+> - git config --global http.https://github.com.proxy http://127.0.0.1:1080
+
 # git tag操作
 
 * 新建tag
