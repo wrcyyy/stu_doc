@@ -12,6 +12,7 @@
     * [1.6. python代码优化指南](Python/python代码机构梳理.md)
     * [1.7. pytest学习](Python/pytest学习.md)
     * [1.8. allure-自动化测试报告框架](Python/allure报告框架.md)
+    * [1.9. python多类继承](Python/类的继承.md)
 * [2. Linux](Linux/README.md)
     * [2.1. vim操作及快捷键](Linux/VIM操作及快捷键.md)
     * [2.2. 通过VNC访问Ubuntu远程桌面](Linux/通过VNC访问Ubuntu远程桌面.md)
